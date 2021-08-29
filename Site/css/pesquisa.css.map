@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/pesquisa.scss"
+    ],
+    "names": [],
+    "file": "pesquisa.css"
+}

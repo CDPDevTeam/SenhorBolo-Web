@@ -1,0 +1,104 @@
+@import 'template';
+
+div.rastrear
+{
+    display:flex;
+    flex-direction: column;
+    width:1000px;
+    height:280px;
+    background-color: $ciano;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 75px;
+    padding-left: 30px;
+    
+
+    div.texto
+    {
+        display: flex;
+        flex-direction: row;
+
+        img.imagem
+        {
+            margin-top:22px;
+            width: 25px;
+            height: 36px;
+        }
+
+        h3
+        {
+            color:white;
+            margin-left:15px;
+        }
+    }
+
+    
+
+    form
+    {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 30px;
+
+        input
+        {
+            margin-left: 65px;
+            width: 800px;
+            height: 55px;
+            border-radius: 28px;
+            border: none;
+            outline: none;
+            font-family: $fonte;
+            font-size:24px;
+            font-weight: bold;
+            background-color:white;
+            padding-left:30px;
+        }
+
+        button
+        {
+            height:30px;
+            width:30px;
+            margin: 13px 30px 13px -50px;
+            border: none;
+            background-color:white;
+            padding: 0px;
+    
+        }
+    }
+
+    div.enderecos
+    {
+        display:flex;
+        flex-direction: row;
+        margin-left:155px;
+
+        div.endereco
+        {
+            height: 80px;
+            width: 198px;
+            margin-right:30px;
+            display: flex;
+            flex-direction: row;
+            background-color: #BADDDC;
+            border-radius: 10px;
+
+            p
+            {
+                font-size: 15px;
+                margin: 0;
+                margin-left:10px;
+                color:#707070;
+                margin-top:15px;
+            }
+
+            img.img
+            {
+                width: 35px;
+                height: 30px;
+                margin-left: 17px;
+                margin-top: 23px;
+            }
+        }
+    }
+}

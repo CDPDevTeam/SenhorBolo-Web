@@ -1,0 +1,281 @@
+body {
+  margin: 0 auto;
+  background-color: #F5F5F5;
+  font-family: Raleway;
+}
+
+h1 {
+  font-size: 52px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+header {
+  position: relative;
+  height: 218px;
+}
+
+nav {
+  margin-top: 17px;
+}
+
+nav a {
+  margin-left: 140px;
+  color: white;
+  font-size: 23px;
+  text-decoration: none;
+  -webkit-transition: .7s;
+  transition: .7s;
+}
+
+nav a:hover {
+  color: #b8b8b8;
+}
+
+nav a:first-of-type {
+  margin-left: 0px;
+}
+
+#caixao {
+  position: absolute;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #0BBAB3;
+  width: 100%;
+  height: 140px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+#caixao form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 522px;
+  height: 56px;
+}
+
+#caixao input {
+  margin-left: 53px;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  border: none;
+  outline: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #575757;
+  background-color: #E6E6E6;
+  padding-left: 30px;
+}
+
+#caixao input::-webkit-input-placeholder {
+  color: #B8B8B8;
+}
+
+#caixao input:-ms-input-placeholder {
+  color: #B8B8B8;
+}
+
+#caixao input::-ms-input-placeholder {
+  color: #B8B8B8;
+}
+
+#caixao input::placeholder {
+  color: #B8B8B8;
+}
+
+#caixao button {
+  height: 30px;
+  width: 30px;
+  margin: 13px 30px 13px -50px;
+  border: none;
+  background-color: #E6E6E6;
+  padding: 0px;
+}
+
+#caixinha {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #4E2F00;
+  width: 100%;
+  height: 78px;
+  border-radius: 0px 0px 20px 20px;
+  top: 120px;
+}
+
+img.lista {
+  height: 30px;
+  width: 30px;
+}
+
+h5.oi {
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+p.emaberto {
+  margin: 10px 0px 16px 100px;
+}
+
+div.inicio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 100px;
+}
+
+div.pedido {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #e6e6e6;
+  width: 1291px;
+  height: 238px;
+  border-radius: 20px;
+  padding: 20px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+div.pedido img.bolo {
+  width: 200px;
+  height: 150px;
+  margin-top: 55px;
+  margin-left: -115px;
+}
+
+div.pedido h3.titulo {
+  margin-left: 20px;
+  margin-top: 60px;
+}
+
+div.pedido div.iniciodois {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: -205px;
+}
+
+div.pedido img.caminhao {
+  width: 22px;
+  height: 16px;
+}
+
+div.pedido p.acaminho {
+  margin-left: 5px;
+}
+
+div.pedido h3.preco {
+  margin-left: 500px;
+  margin-top: 110px;
+  font-size: 30px;
+}
+
+div.pedido div.botoes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+div.pedido button.um {
+  width: 282px;
+  height: 67px;
+  background-color: #0BBAB3;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  border-style: none;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div.pedido div.botao {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 90px;
+}
+
+div.pedido img.rastrear {
+  width: 18px;
+  height: 18px;
+  margin-left: 5px;
+}
+
+div.pedido button.dois {
+  width: 282px;
+  height: 67px;
+  border-radius: 25px;
+  border-style: none;
+  font-family: "Raleway", sans-serif;
+  color: #797979;
+  font-size: 20px;
+  font-weight: bold;
+}

@@ -1,0 +1,283 @@
+@import 'template';
+
+
+
+
+
+
+div.topos
+{
+    margin-left: 270px;
+    border-radius: 15px;
+    background-color: #e6e6e6;
+    height:50px;
+    width: 1000px;
+    @include centralizar;
+    font-size: 20px;
+    color: #707070;
+}
+
+div.tudo
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+    
+}
+
+div.mapa
+{
+    margin-right: 30px;
+}
+
+div.cima
+{
+    background-color: $ciano;
+    border-radius: 20px;
+    color: white;
+    height: 130px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    img
+    {
+        width: 50px;
+        height:  30px;
+        margin-left: 15px;
+    }
+
+    h3
+    {
+        font-size: 30px;
+    }
+    
+}
+
+div.baixo
+{
+    img
+    {
+        width: 500px;
+    }
+}
+
+div.dados
+{   
+
+    p.a
+    {
+        margin: 0px;
+        font-size:35px;
+        color: #707070;
+    }
+
+    p.ab
+    {
+        margin: 0px;
+        font-size:40px;
+        color: black;
+        font-weight: 400;
+    }
+
+    p.b
+    {
+        margin-top: 25px;
+        margin-bottom: 10px;
+        font-size:20px;
+        color: #707070;
+    }
+
+    div.chega
+    {
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+
+        img
+        {
+            width:35px;
+            height: 35px;
+            margin-top: 4px;
+            margin-right: 4px;
+        }
+    }
+
+      
+    div.destino
+    {
+        height: 80px;
+        width: 198px;
+        margin-right:30px;
+        display: flex;
+        flex-direction: row;
+        background-color: #e6e6e6;
+        border-radius: 10px;
+
+        p.ar
+        {
+            font-size: 15px;
+            margin: 0;
+            margin-left:14px;
+            color:#707070;
+            margin-top:15px;
+        }
+
+        p.br
+        {
+            font-size: 15px;
+            margin: 0;
+            margin-left:14px;
+            color:#707070;
+            margin-top:10px;
+        }
+
+        img
+        {
+            width: 35px;
+            height: 30px;
+            margin-left: 17px;
+            margin-top: 23px;
+        }
+    }
+
+    div.pedido
+    {
+        height: 150px;
+        width: 400px;
+        margin-top: 15px;
+        margin-bottom: 70px;
+        display: flex;
+        flex-direction: row;
+        background-color: #e6e6e6;
+        border-radius: 20px;
+
+        p
+        {
+            font-size: 22px;
+            margin: 0;
+            margin-left:14px;
+            color:#707070;
+            margin-top:15px;
+        }
+
+        img.bolo
+        {
+            width: 180px;
+            height: 130px;
+            margin-top: 11px;
+            margin-left: 11px;
+        }
+
+        div.chega
+        {
+            display: flex;
+            flex-direction: row;
+            margin-left:14px;
+            margin-top: 10px;
+
+            p
+            {
+                font-size: 15px;
+                margin: 0;
+                margin-left:5px;
+                color:#707070;
+                margin-top:5px;
+            }
+
+            img
+            {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+}
+
+div.tudinho
+{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around ;
+    background-color: $ciano;
+    border-radius: 20px 20px 0px 0px;
+    height: 130px;
+    padding-top: 40px;
+
+    p.dev
+    {
+        font-weight:600;
+        color:white;
+    }
+
+    div.textito
+    {
+
+        p.ti
+        {
+            margin: 0;
+            color: white;
+            font-weight:600;
+            font-size:20px;
+            margin-bottom:15px;
+        }
+
+        p
+        {
+            margin: 0;
+            color: white;
+            margin-bottom:5px;
+        }
+    }
+
+    div.redes
+    {
+        p
+        {
+            margin: 0;
+            color: white;
+            font-weight:600;
+            margin-bottom:15px;
+            font-size:20px;
+        }
+    }
+
+    div.app
+    {
+        p
+        {
+            margin: 0;
+            color: white;
+            font-weight:600;
+            margin-bottom:15px;
+            font-size:20px;
+        }
+
+        div.zap
+        {
+            display: flex;
+            flex-direction: row;
+        }
+
+        img.aba
+        {
+            margin-top:-10px;
+            margin-left:-15px;
+        }
+
+        img.abb
+        {
+            margin-top: 2px;
+            width: 170px;
+            height: 52px;
+        }
+    }
+}
+
+
+
+

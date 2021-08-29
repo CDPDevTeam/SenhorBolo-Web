@@ -1,0 +1,425 @@
+body {
+  margin: 0 auto;
+  background-color: #F5F5F5;
+  font-family: Raleway;
+}
+
+h1 {
+  font-size: 52px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+header {
+  position: relative;
+  height: 218px;
+}
+
+nav {
+  margin-top: 17px;
+}
+
+nav a {
+  margin-left: 140px;
+  color: white;
+  font-size: 23px;
+  text-decoration: none;
+  -webkit-transition: .7s;
+  transition: .7s;
+}
+
+nav a:hover {
+  color: #b8b8b8;
+}
+
+nav a:first-of-type {
+  margin-left: 0px;
+}
+
+#caixao {
+  position: absolute;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #0BBAB3;
+  width: 100%;
+  height: 140px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+#caixao form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 522px;
+  height: 56px;
+}
+
+#caixao input {
+  margin-left: 53px;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  border: none;
+  outline: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #575757;
+  background-color: #E6E6E6;
+  padding-left: 30px;
+}
+
+#caixao input::-webkit-input-placeholder {
+  color: #B8B8B8;
+}
+
+#caixao input:-ms-input-placeholder {
+  color: #B8B8B8;
+}
+
+#caixao input::-ms-input-placeholder {
+  color: #B8B8B8;
+}
+
+#caixao input::placeholder {
+  color: #B8B8B8;
+}
+
+#caixao button {
+  height: 30px;
+  width: 30px;
+  margin: 13px 30px 13px -50px;
+  border: none;
+  background-color: #E6E6E6;
+  padding: 0px;
+}
+
+#caixinha {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #4E2F00;
+  width: 100%;
+  height: 78px;
+  border-radius: 0px 0px 20px 20px;
+  top: 120px;
+}
+
+div.topos {
+  margin-left: 270px;
+  border-radius: 15px;
+  background-color: #e6e6e6;
+  height: 50px;
+  width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+  color: #707070;
+}
+
+div.tudo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+}
+
+div.mapa {
+  margin-right: 30px;
+}
+
+div.cima {
+  background-color: #0BBAB3;
+  border-radius: 20px;
+  color: white;
+  height: 130px;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.cima img {
+  width: 50px;
+  height: 30px;
+  margin-left: 15px;
+}
+
+div.cima h3 {
+  font-size: 30px;
+}
+
+div.baixo img {
+  width: 500px;
+}
+
+div.dados p.a {
+  margin: 0px;
+  font-size: 35px;
+  color: #707070;
+}
+
+div.dados p.ab {
+  margin: 0px;
+  font-size: 40px;
+  color: black;
+  font-weight: 400;
+}
+
+div.dados p.b {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #707070;
+}
+
+div.dados div.chega {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 5px;
+}
+
+div.dados div.chega img {
+  width: 35px;
+  height: 35px;
+  margin-top: 4px;
+  margin-right: 4px;
+}
+
+div.dados div.destino {
+  height: 80px;
+  width: 198px;
+  margin-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #e6e6e6;
+  border-radius: 10px;
+}
+
+div.dados div.destino p.ar {
+  font-size: 15px;
+  margin: 0;
+  margin-left: 14px;
+  color: #707070;
+  margin-top: 15px;
+}
+
+div.dados div.destino p.br {
+  font-size: 15px;
+  margin: 0;
+  margin-left: 14px;
+  color: #707070;
+  margin-top: 10px;
+}
+
+div.dados div.destino img {
+  width: 35px;
+  height: 30px;
+  margin-left: 17px;
+  margin-top: 23px;
+}
+
+div.dados div.pedido {
+  height: 150px;
+  width: 400px;
+  margin-top: 15px;
+  margin-bottom: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #e6e6e6;
+  border-radius: 20px;
+}
+
+div.dados div.pedido p {
+  font-size: 22px;
+  margin: 0;
+  margin-left: 14px;
+  color: #707070;
+  margin-top: 15px;
+}
+
+div.dados div.pedido img.bolo {
+  width: 180px;
+  height: 130px;
+  margin-top: 11px;
+  margin-left: 11px;
+}
+
+div.dados div.pedido div.chega {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: 14px;
+  margin-top: 10px;
+}
+
+div.dados div.pedido div.chega p {
+  font-size: 15px;
+  margin: 0;
+  margin-left: 5px;
+  color: #707070;
+  margin-top: 5px;
+}
+
+div.dados div.pedido div.chega img {
+  width: 22px;
+  height: 22px;
+}
+
+div.tudinho {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #0BBAB3;
+  border-radius: 20px 20px 0px 0px;
+  height: 130px;
+  padding-top: 40px;
+}
+
+div.tudinho p.dev {
+  font-weight: 600;
+  color: white;
+}
+
+div.tudinho div.textito p.ti {
+  margin: 0;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+div.tudinho div.textito p {
+  margin: 0;
+  color: white;
+  margin-bottom: 5px;
+}
+
+div.tudinho div.redes p {
+  margin: 0;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+div.tudinho div.app p {
+  margin: 0;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+div.tudinho div.app div.zap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+div.tudinho div.app img.aba {
+  margin-top: -10px;
+  margin-left: -15px;
+}
+
+div.tudinho div.app img.abb {
+  margin-top: 2px;
+  width: 170px;
+  height: 52px;
+}

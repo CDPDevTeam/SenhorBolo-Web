@@ -1,0 +1,115 @@
+@import 'template';
+
+main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:882px;
+}
+
+.login
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: $border-radius20;
+    width: 517px;
+    height: 604px;
+    background-color: $ciano;
+    color:white;
+
+    h3, h4{
+        font-weight: bold;
+    }
+    
+    h3
+    {
+        margin-bottom:30px;
+    }
+
+    h4
+    {
+        margin-top: 6px;
+        margin-bottom: 4px;
+    }
+
+    a
+    {
+       text-decoration: none;
+       color:white;
+       font-size: 18px;     
+    }
+
+    #resetSenha{
+        margin-top: 6px;
+    }
+
+    .naocadastro
+    {
+        margin-top: 35px;
+    }
+
+    img
+    {
+        margin-bottom: 45px;
+    }
+
+    input
+    {
+        width: 347px;
+        height: 43px;
+        padding-left: 15px;
+        border-radius: $border-radius10;
+        border: none;
+        outline: none;
+        color: #b8b8b8;
+        font-family: $fonte;
+        background-color:#fff;
+        font-size: 20px;
+    }
+    
+    form
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin:0;
+
+        button
+        {
+            border: none;
+            width: 25px;
+            height:25px;
+            background-color: white;
+            padding: 0;
+            margin: 20px 30px 12px -40px;
+        }
+    }
+    
+    .loginbotao
+        {
+            margin-top: 50px;
+            width: 332px;
+            height: 51px;
+            background-color: $marrom;
+            border: none;
+            font-family: $fonte;
+            color:#fff;
+            border-radius: 10px;
+            
+            h3
+            {
+                margin:11px 0 11px 0;
+            }
+        }    
+}
+
+.texto{
+    width: auto;
+    height: 190px;
+}
