@@ -4,6 +4,7 @@ $border-radius20: 20px;
 $border-radius10: 10px;
 $fonte: 'Raleway', sans-serif;;
 
+@import 'template';
 
 @mixin centralizar{ 
     display: flex;
@@ -11,9 +12,6 @@ $fonte: 'Raleway', sans-serif;;
     align-items: center;
     justify-content: center;
 }
-
-
-
 
 body{
     margin: 0 auto; 
@@ -95,7 +93,6 @@ nav
 
 div.home
 {   
-    margin-bottom: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -174,6 +171,14 @@ div.home
         }
 }
 
+.conteudoPrincipal{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .recomendados{
     margin: 0 auto;
     width: 1150px;
@@ -227,8 +232,8 @@ div.titulo
 
 img.imagem
 {
+    align-self: center;
     width:1130px;
-    height:auto;
     border-radius: 20px;
 }
 
@@ -236,7 +241,5 @@ div.imagem
 {
     margin: 0 auto;
     margin-top:40px;
-    margin-left:200px;
-    
 }
 
