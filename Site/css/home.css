@@ -1,3 +1,7 @@
+.material-icons.md-30 {
+  font-size: 30px;
+}
+
 body {
   margin: 0 auto;
   background-color: #F5F5F5;
@@ -59,13 +63,14 @@ nav a:first-of-type {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   background-color: #0BBAB3;
   width: 100%;
   height: 140px;
   border-radius: 0px 0px 20px 20px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 #caixao form {
@@ -118,6 +123,74 @@ nav a:first-of-type {
   border: none;
   background-color: #E6E6E6;
   padding: 0px;
+}
+
+.conteudoHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 70%;
+}
+
+.linkUsuario, .linkCarrinho {
+  color: white;
+  text-decoration: none;
+}
+
+.linkUsuario img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.perfilUsuario {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.perfilUsuario h4 {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.perfilUsuario h4 span {
+  font-weight: lighter;
+}
+
+.carrinhoCompras {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  color: #FFF;
+  background-color: #4E2F00;
 }
 
 #caixinha {
