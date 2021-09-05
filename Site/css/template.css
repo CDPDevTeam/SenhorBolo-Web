@@ -2,6 +2,10 @@
   font-size: 30px;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   margin: 0 auto;
   background-color: #F5F5F5;
@@ -30,7 +34,7 @@ header {
 }
 
 nav {
-  margin-top: 17px;
+  margin: 0;
 }
 
 nav a {
@@ -66,11 +70,11 @@ nav a:first-of-type {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background-color: #0BBAB3;
-  width: 100%;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
   height: 140px;
   border-radius: 0px 0px 20px 20px;
-  padding-left: 50px;
-  padding-right: 50px;
 }
 
 #caixao form {
