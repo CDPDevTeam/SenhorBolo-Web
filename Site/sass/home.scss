@@ -202,6 +202,21 @@ div.produto{
     background-color: white;
     border-radius: 10px;
 
+    a.teste
+    {  
+        h4
+        {
+            text-decoration: none;
+            color: black;
+        }
+
+        p
+        {
+            text-decoration: none;
+            color: black;
+        }
+    }
+
     h4
     {
         align-self: flex-end;
@@ -209,12 +224,16 @@ div.produto{
         margin-bottom:0;
         font-size:17px;
         font-weight: bold;
+        text-decoration: none;
+        color: black;
     }
 
     p
     {
         margin-top: 5px;
         margin-bottom:0;
+        text-decoration: none;
+        color: black;
     }
 
     img.teste
@@ -223,6 +242,10 @@ div.produto{
         height:auto;
         
     }
+
+    
+        
+    
 }
 
 div.titulo

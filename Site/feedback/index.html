@@ -7,26 +7,42 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/feedback.css">
-        <title>Cadastro</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title> Feedback </title>
     </head>
     <body>
         <header>
             <div id="caixao">
-                <a href="#"><img src="../imagens/logay.png" alt="logo senhor bolo" width="258" height="50"></a>
-                <form>
-                    <input type="text" placeholder="Digite para pesquisar">
-                    <button type="submit">
-                        <img src="../imagens/lupa.png" alt="lupa de pesquisa">
-                    </button>
-                </form>
+                <div class="conteudoHeader">
+                    <a href="#"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
+                    <form>
+                        <input type="text" placeholder="Digite para pesquisar">
+                        <button type="submit">
+                            <img src="../imagens/lupa.png" alt="lupa de pesquisa">
+                        </button>
+                    </form>
+                    <a href="#" class="linkUsuario">
+                        <div class="perfilUsuario">
+                            <img src="../imagens/Misaka_10032.jpg" alt="Foto de perfil do usuário">
+                            <h4> Felipe Ribeiro <br> <span> Ver perfil </span></h4>
+                        </div>
+                    </a>
+                    <a href="#" class="linkCarrinho">
+                        <div class="carrinhoCompras">
+                            <span class="material-icons md-30">
+                                shopping_cart
+                            </span>
+                        </div>
+                    </a>
+                </div>
             </div>
             <div id="caixinha">
                 <nav>
-                    <a href="../produto/index.html">
-                        Bolos
+                    <a href="../pesquisa/index.html">
+                        Produtos
                     </a>
-                    <a href="../ofertas/index.html">
-                        Ofertas
+                    <a href="../produto/personalizado/index.html">
+                        Personalizado
                     </a>
                     <a href="../cupons/index.html">
                         Cupons
@@ -39,16 +55,16 @@
         </header>
         <main>
             <div class="inicio">
-                <img src="../imagens/pedido.png" class="lista" alt="ícone de cupom">
+                <img src="../imagens/pedido.png" class="lista" alt="ícone de pedido">
                 <h5 class="oi"> O que houve de errado? </h5>
             </div>
 
             <div class="pedido">
                 <p class="p"> Pedido #00001 </p>
-                <img src="../imagens/66opkkln.png" class="bolo" alt=" Haro bolo ">
+                <img src="../imagens/66opkkln.png" class="bolo" alt=" Bolo do Haro ">
                 <h3 class="titulo"> Bolo Estrogenado</h3>
                 <div class="iniciodois">
-                    <img src="../imagens/caminhao.png" class="caminhao" alt="caminhão">
+                    <img src="../imagens/caminhao.png" class="caminhao" alt="ícone de caminhão">
                     <p class="acaminho"> Entregue </p>
                 </div>
                 <h3 class="preco"> R$: 20,00 </h3>
@@ -67,14 +83,65 @@
                 </div>
                 <div class="imgs">
                     <button class="boto">
-                        <img src="../imagens/camera.png">
+                        <img src="../imagens/camera.png" alt="ícone de câmera">
                     </button>
                     <div class="im">
-                        <img src="../imagens/66opkkln.png" class="haro">
-                        <img src="../imagens/66opkkln.png" class="raor">
+                        <img src="../imagens/66opkkln.png" class="haro" alt=" Bolo do Haro ">
+                        <img src="../imagens/66opkkln.png" class="raor" alt=" Bolo do Haro ">
                     </div>
                 </div>
             </div>
         </main>
+        <footer>
+            <div class="tudinho">
+                <div>
+                    <img class="logro" src="../imagens/logay.png" alt="logo escrito senhor bolo">
+                    <p class="dev">
+                        Desenvolvido pelo grupo CDP Inc.
+                    </p>
+                </div>
+                <div class="textito">
+                    <p class="ti">
+                        Nos localizamos em:
+                    </p>
+                    <p>
+                        R. Humaitá, 638 - Bela Vista, 
+    
+                    </p>
+                    <p>
+                        São Paulo - SP, 01321-010
+                    </p>
+                </div>
+                <div class="textito"> 
+                    <p class="ti">
+                        Algum problema ou dúvida?
+                    </p>
+                    <p>
+                        +55 11 98736-0701
+                    </p>
+                    <p>
+                        edson.koshikumo@etec.sp.gov.br
+                    </p>
+                </div>
+                <div class="redes">
+                    <p>
+                        Siga-nos
+                    </p>
+                    <div>
+                        <img src="../imagens/instagram.png" alt="logo do instagram">
+                        <img src="../imagens/twitter-logo-7.png" alt="logo do twitter"> 
+                    </div>
+                </div>
+                <div class="app">
+                    <p>
+                        Baixe Nossos Aplicativos
+                    </p>
+                    <div class="zap">
+                        <img class="aba" src="../imagens/DownloadAndroid.png" alt="Faça o Download do aplicativo no Android">
+                        <img class="abb" src="../imagens/appstore.png" alt="Faça o Download do aplicativo na AppStore">
+                    </div>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

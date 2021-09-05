@@ -6,27 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../css/carrinho.css">
-    <title> Senhor Bolo - Home </title>
+    <title> Carrinho de compras </title>
 </head>
 <body>
     <header>
         <div id="caixao">
-            <a href="#"><img src="../imagens/logay.png" alt="logo senhor bolo" width="258" height="50"></a>
-            <form>
-                <input type="text" placeholder="Digite para pesquisar">
-                <button type="submit">
-                    <img src="../imagens/lupa.png" alt="lupa de pesquisa">
-                </button>
-            </form>
+            <div class="conteudoHeader">
+                <a href="#"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
+                <form>
+                    <input type="text" placeholder="Digite para pesquisar">
+                    <button type="submit">
+                        <img src="../imagens/lupa.png" alt="lupa de pesquisa">
+                    </button>
+                </form>
+                <a href="#" class="linkUsuario">
+                    <div class="perfilUsuario">
+                        <img src="../imagens/Misaka_10032.jpg" alt="Foto de perfil do usuário">
+                        <h4> Felipe Ribeiro <br> <span> Ver perfil </span></h4>
+                    </div>
+                </a>
+                <a href="#" class="linkCarrinho">
+                    <div class="carrinhoCompras">
+                        <span class="material-icons md-30">
+                            shopping_cart
+                        </span>
+                    </div>
+                </a>
+            </div>
         </div>
         <div id="caixinha">
             <nav>
-                <a href="../produto/index.html">
-                    Bolos
+                <a href="../pesquisa/index.html">
+                    Produtos
                 </a>
-                <a href="../ofertas/index.html">
-                    Ofertas
+                <a href="../produto/personalizado/index.html">
+                    Personalizado
                 </a>
                 <a href="../cupons/index.html">
                     Cupons
@@ -36,18 +52,17 @@
                 </a>
             </nav>
         </div>
-    
     </header>
     <main>
         <div class="inicio">
-            <img src="../imagens/carrinho.png" class="lista" alt="ícone de pedido">
+            <img src="../imagens/carrinho.png" class="lista" alt="ícone de carrinho">
             <h5 class="oi"> Carrinho </h5>
         </div>
         <div class="pedido">
-            <img src="../imagens/66opkkln.png" class="bolo" alt=" Haro bolo ">
+            <img src="../imagens/66opkkln.png" class="bolo" alt=" Bolo do Haro ">
             <h3 class="titulo"> Bolo Estrogenado </h3>
             <div class="iniciodois">
-                <img src="../imagens/logobolo.png" class="caminhao" alt="caminhão">
+                <img src="../imagens/logobolo.png" class="caminhao" alt=" Ícone de Bolo">
                 <p class="acaminho"> Bolo de chocolate com cobertura de glacê colorido </p>
             </div>
             <h3 class="preco"> R$: 20,00 </h3>
@@ -64,10 +79,10 @@
         </div>
 
         <div class="pedido">
-            <img src="../imagens/66opkkln.png" class="bolo" alt=" Haro bolo ">
+            <img src="../imagens/66opkkln.png" class="bolo" alt=" Bolo do Haro ">
             <h3 class="titulo"> Bolo Estrogenado </h3>
             <div class="iniciodois">
-                <img src="../imagens/logobolo.png" class="caminhao" alt="caminhão">
+                <img src="../imagens/logobolo.png" class="caminhao" alt=" Ícone de Bolo">
                 <p class="acaminho"> Bolo de chocolate com cobertura de glacê colorido </p>
             </div>
             <h3 class="preco"> R$: 20,00 </h3>
@@ -84,10 +99,10 @@
         </div>
 
         <div class="pedido">
-            <img src="../imagens/66opkkln.png" class="bolo" alt=" Haro bolo ">
+            <img src="../imagens/66opkkln.png" class="bolo" alt=" Bolo do Haro ">
             <h3 class="titulo"> Bolo Estrogenado </h3>
             <div class="iniciodois">
-                <img src="../imagens/logobolo.png" class="caminhao" alt="caminhão">
+                <img src="../imagens/logobolo.png" class="caminhao" alt=" Ícone de Bolo">
                 <p class="acaminho"> Bolo de chocolate com cobertura de glacê colorido </p>
             </div>
             <h3 class="preco"> R$: 20,00 </h3>
@@ -117,7 +132,7 @@
     <footer>
         <div class="tudinho">
             <div>
-                <img class="logro" src="../imagens/logay.png">
+                <img class="logro" src="../imagens/logay.png" alt="logo escrito senhor bolo">
                 <p class="dev">
                     Desenvolvido pelo grupo CDP Inc.
                 </p>
@@ -150,8 +165,8 @@
                     Siga-nos
                 </p>
                 <div>
-                    <img src="../imagens/instagram.png">
-                    <img src="../imagens/twitter-logo-7.png">
+                    <img src="../imagens/instagram.png" alt="logo do instagram">
+                    <img src="../imagens/twitter-logo-7.png" alt="logo do twitter"> 
                 </div>
             </div>
             <div class="app">
@@ -159,8 +174,8 @@
                     Baixe Nossos Aplicativos
                 </p>
                 <div class="zap">
-                    <img class="aba" src="../imagens/DownloadAndroid.png">
-                    <img class="abb" src="../imagens/appstore.png">
+                    <img class="aba" src="../imagens/DownloadAndroid.png" alt="Faça o Download do aplicativo no Android">
+                    <img class="abb" src="../imagens/appstore.png" alt="Faça o Download do aplicativo na AppStore">
                 </div>
             </div>
         </div>
