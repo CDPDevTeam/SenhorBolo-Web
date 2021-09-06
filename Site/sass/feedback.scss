@@ -5,7 +5,11 @@ div.inicio
     display:flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 100px;
+}
+
+main{
+    margin: 0 auto;
+    width: 50%;
 }
 
 img.lista
@@ -28,7 +32,6 @@ div.pedido
     width: 1000px;
     height: 200px;
     border-radius: 20px;
-    margin-left: 270px;
     box-shadow: 5px 10px 18px #888888;
 
     img.bolo
@@ -85,18 +88,17 @@ div.pedido
     p.nos
     {
         margin-top:30px;
-        margin-left: 270px;
         font-size: 22px;
     }
 
 
     div.englobar
     {
-
+        width: 100%;
+        justify-content: space-between;
         margin-bottom:40px;
         display: flex;
         flex-direction: row;
-        margin-left: 270px;
 
         div.textao
         {
@@ -119,32 +121,11 @@ div.pedido
             
             }
 
-            button.butao
-            {
-                width:282px;
-                height:67px;
-                
-                margin-top: 15px;
-                margin-left: 380px;
-                
 
-                background-color: $ciano;
-                color: white;
-                box-shadow: 5px 10px 18px #888888;
-
-                border-radius: 25px;
-                border-style: none;
-
-                font-family: $fonte;
-                font-size: 20px;
-                font-weight: bold;
-            }
         }  
         
         div.imgs
         {
-            margin-left: 220px;
-
             img.haro
             {
                 width:218px;
@@ -185,4 +166,25 @@ div.pedido
                
             }
         }
+    }
+
+    button.butao
+    {
+        width:282px;
+        height:67px;
+        
+        margin-top: 15px;
+        margin-left: 380px;
+        
+
+        background-color: $ciano;
+        color: white;
+        box-shadow: 5px 10px 18px #888888;
+
+        border-radius: 25px;
+        border-style: none;
+
+        font-family: $fonte;
+        font-size: 20px;
+        font-weight: bold;
     }

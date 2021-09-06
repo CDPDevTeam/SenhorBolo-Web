@@ -2,6 +2,10 @@
   font-size: 30px;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   margin: 0 auto;
   background-color: #F5F5F5;
@@ -30,7 +34,8 @@ header {
 }
 
 nav {
-  margin-top: 17px;
+  margin: 0;
+  margin-top: 10px;
 }
 
 nav a {
@@ -66,11 +71,11 @@ nav a:first-of-type {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background-color: #0BBAB3;
-  width: 80%;
-  height: 140px;
-  border-radius: 0px 0px 20px 20px;
+  width: 90%;
   padding-left: 5%;
   padding-right: 5%;
+  height: 140px;
+  border-radius: 0px 0px 20px 20px;
 }
 
 #caixao form {
@@ -293,6 +298,20 @@ div.tudinho div.app img.abb {
   height: 52px;
 }
 
+main {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .recomendados {
   margin: 0 auto;
   width: 1150px;
@@ -323,6 +342,7 @@ div.produto {
       -ms-flex-pack: start;
           justify-content: flex-start;
   border-radius: 10px;
+  margin-left: 10px;
 }
 
 div.produto p {
@@ -346,7 +366,6 @@ h2 {
 
 div.botoes {
   margin-top: 40px;
-  margin-left: 450px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

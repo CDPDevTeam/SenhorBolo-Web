@@ -2,6 +2,10 @@
   font-size: 30px;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   margin: 0 auto;
   background-color: #F5F5F5;
@@ -30,7 +34,8 @@ header {
 }
 
 nav {
-  margin-top: 17px;
+  margin: 0;
+  margin-top: 10px;
 }
 
 nav a {
@@ -66,11 +71,11 @@ nav a:first-of-type {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background-color: #0BBAB3;
-  width: 80%;
-  height: 140px;
-  border-radius: 0px 0px 20px 20px;
+  width: 90%;
   padding-left: 5%;
   padding-right: 5%;
+  height: 140px;
+  border-radius: 0px 0px 20px 20px;
 }
 
 #caixao form {
@@ -293,16 +298,17 @@ div.tudinho div.app img.abb {
   height: 52px;
 }
 
+main {
+  margin: 0 auto;
+  width: 50%;
+}
+
 div.topos {
-  margin-left: 270px;
+  margin-left: 2px;
   border-radius: 15px;
   background-color: #e6e6e6;
   height: 50px;
   width: 1000px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -314,6 +320,11 @@ div.topos {
       -ms-flex-align: center;
           align-items: center;
   font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #707070;
 }
 
@@ -337,7 +348,7 @@ div.mapa {
 
 div.cima {
   background-color: #0BBAB3;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
   color: white;
   height: 130px;
   width: 500px;

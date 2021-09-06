@@ -1,9 +1,9 @@
 @import 'template';
 
-
-
-
-
+main{
+    margin: 0 auto;
+    width: 50%;
+}
 
 div.topos
 {
@@ -37,7 +37,7 @@ div.mapa
 div.cima
 {
     background-color: $ciano;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     color: white;
     height: 130px;
     width: 500px;

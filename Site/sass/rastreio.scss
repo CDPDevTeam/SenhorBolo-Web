@@ -1,5 +1,13 @@
 @import 'template';
 
+body{
+    background-image: url("../imagens/mapa.png");
+}
+
+main{
+    height: 600px;
+}
+
 div.rastrear
 {
     display:flex;

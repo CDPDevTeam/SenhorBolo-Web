@@ -1,5 +1,13 @@
 @import 'template';
 
+main{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .recomendados{
     margin: 0 auto;
     width: 1150px;
@@ -26,6 +34,7 @@ div.produto{
     flex-direction: column;
     justify-content: flex-start;
     border-radius: 10px;
+    margin-left: 10px;
    
     p
     {
@@ -53,7 +62,6 @@ h2
 div.botoes
 {
     margin-top: 40px;
-    margin-left: 450px;
     display: flex;
     flex-direction: row;
 }
