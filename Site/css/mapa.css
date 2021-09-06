@@ -299,6 +299,10 @@ div.topos {
   background-color: #e6e6e6;
   height: 50px;
   width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

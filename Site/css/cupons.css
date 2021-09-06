@@ -293,6 +293,7 @@ div.tudinho div.app img.abb {
   height: 52px;
 }
 
+
 div.inicio {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -305,6 +306,14 @@ div.inicio {
       -ms-flex-align: center;
           align-items: center;
   margin-left: 100px;
+}
+
+div.testezap
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 img.lista {
