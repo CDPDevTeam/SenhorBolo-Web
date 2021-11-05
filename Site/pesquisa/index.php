@@ -7,7 +7,7 @@ FROM produto, categoria_produto
 WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod";
 
 
-IF (isset($_GET["s"])){
+IF (isset($_GET["s"]) && $_GET != ''){
     $keyword = $_GET["s"];
     IF ($keyword != null)
     {
@@ -44,26 +44,27 @@ $resultado = pg_query($bancoCon, $sql);
             <div id="caixao">
                 <div class="conteudoHeader">
                     <a href="../home/index.html"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
-                    <form>
-                        <input type="text" id="searchbig" placeholder="Digite para pesquisar">
-                        <button type="submit" id="enterinvisible" onclick="searchbig()" >
-                            <img src="../imagens/lupa.png" alt="lupa de pesquisa">
+                    
+                    <div class='searchHolder'>
+                        <input type="text" id="searchbig" placeholder="Digite para pesquisar" width="522" height="56" />
+                        <button id="enterinvisible" onclick="myFunction();">
+                        <img src="../imagens/lupa.png" alt="lupa de pesquisa">
                         </button>
-                    </form>
+                    </div>    
                     <script>
-                    var input = document.getElementById("searchbig");
-                        input.addEventListener("keyup", function(event) {
-                            if (event.keyCode === 13) {
-                                event.preventDefault();
-                                document.getElementById("enterinvisible").click();
-                            }
-                    });
-                    function searchbig(){
-                        alert (document.getElementById('searchbig').value);
-                      /**window.location.href = "http://localhost/site/pesquisa/index.php?s="
-                      + document.getElementById('searchbig').value;**/
-                    }
+                        var input = document.getElementById("searchbig");
+                            input.addEventListener("keyup", function(event) {
+                                if (event.keyCode === 13) {
+                                    event.preventDefault();
+                                    document.getElementById("enterinvisible").click();
+                                }
+                        });
+
+                        function myFunction() {
+                            window.location.href = "index.php?s=" + document.getElementById('searchbig').value;
+                        }
                     </script>
+
                     <a href="../perfil/index.html" class="linkUsuario">
                         <div class="perfilUsuario">
                             <img src="../imagens/Misaka_10032.jpg" alt="Foto de perfil do usuário">
@@ -99,59 +100,6 @@ $resultado = pg_query($bancoCon, $sql);
         </header>
         <main>
             <div class="tudo">
-                <div class="barra" style="min-width:300px">
-                    <h2> Filtre sua busca</h2>
-                    <p> R$: 00, 00 - 49,90 </p>
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                    <ul>
-                        Bolos Caseiros
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        Bolos Festivos
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        Bolos em Oferta
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        Mais vendidos
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                        <li>
-                            <a style=" text-decoration: none; color: #000;" href="../pesquisa/index.html">Bolo Legal</a>
-                        </li>
-                    </ul>
-                </div>
                 <div class="resultado">
                     <h2>
                         <?php 

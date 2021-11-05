@@ -93,12 +93,11 @@ nav
     border-radius: 0px 0px 20px 20px;
 
 
-    form
-    {
+    .searchHolder{
         display: flex;
         flex-direction: row;
         width: 522px;
-        height:56px;
+        height: 56px;
     }
 
     input
@@ -121,17 +120,16 @@ nav
     {
         color: #B8B8B8;
     }
-
-    button
-    {
-        height:30px;
-        width:30px;
-        margin: 13px 30px 13px -50px;
-        border: none;
-        background-color:#E6E6E6;
-        padding: 0px;
-    }
     
+}
+
+#enterinvisible{
+    height:30px;
+    width:30px;
+    margin: 13px 30px 13px -50px;
+    border: none;
+    background-color:#E6E6E6;
+    padding: 0px;
 }
 
 .conteudoHeader{

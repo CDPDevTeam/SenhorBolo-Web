@@ -78,7 +78,7 @@ nav a:first-of-type {
   border-radius: 0px 0px 20px 20px;
 }
 
-#caixao form {
+#caixao .searchHolder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,7 +121,7 @@ nav a:first-of-type {
   color: #B8B8B8;
 }
 
-#caixao button {
+#enterinvisible {
   height: 30px;
   width: 30px;
   margin: 13px 30px 13px -50px;
