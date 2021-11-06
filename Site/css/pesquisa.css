@@ -302,29 +302,23 @@ div.tudo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 1350px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 82%;
+  min-height: 600px;
   margin: 0 auto;
 }
 
-div.resultado {
-  margin-left: 30px;
-  min-height: 600px;
-}
-
-div.resultado p.resultados {
-  font-size: 20px;
-  margin-top: 0px;
-  margin-bottom: 15px;
-  margin-left: 10px;
-}
-
-div.resultado h2 {
-  margin-top: 35px;
-  margin-left: 10px;
+div.tudo h2 {
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
 div.produtos {
+  margin-top: -20px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -332,10 +326,20 @@ div.produtos {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-bottom: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-div.produto {
+div.produtos a {
+  color: black;
+}
+
+.produto {
+  margin-right: 15px;
+  margin-top: 20px;
+  width: 205px;
+  height: 279px;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -343,111 +347,66 @@ div.produto {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  border-radius: 20px;
+}
+
+.fundoIMGProduto {
+  -ms-flex-item-align: end;
+      align-self: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 10px;
-  margin-left: 10px;
-  background-color: white;
-  border-radius: 10px;
-  height: 260px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 190px;
+  height: 190px;
+  border-radius: 20px;
+  background-color: #64CBC7;
 }
 
-div.produto a {
-  color: #000;
-  min-width: 200px;
-  max-width: 200px;
+.fundoIMGProduto img {
+  width: 160px;
+  height: 160px;
 }
 
-div.produto h4 {
-  margin-top: 15px;
+.textoProduto {
+  -ms-flex-item-align: end;
+      align-self: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 185px;
+  height: 88px;
+}
+
+.textoProduto h4, .textoProduto h5 {
+  margin-top: 0;
   margin-bottom: 0;
-  font-size: 17px;
+}
+
+.textoProduto h4 {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 19px;
   font-weight: bold;
 }
 
-div.produto p {
-  margin-top: 5px;
-  margin-bottom: 0;
-}
-
-div.produto img {
-  width: 170px;
-  height: 170px;
-  height: auto;
-}
-
-div.barra {
-  background-color: white;
-  border-radius: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 40px;
-}
-
-div.barra p {
-  font-size: 22px;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  margin-left: 65px;
-}
-
-div.barra h2 {
-  margin-top: 35px;
-  margin-left: 7px;
-  margin-bottom: 10px;
-}
-
-div.barra ul {
-  margin-left: -20px;
-  font-size: 22px;
-}
-
-div.barra li {
-  color: white;
-  margin-left: 20px;
-  font-size: 18px;
-  margin-top: 5px;
-}
-
-div.barra a {
-  color: black;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 15px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  border-radius: 12px;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #0BBAB3;
-  cursor: pointer;
-  border-radius: 12px;
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #0BBAB3;
-  cursor: pointer;
+.textoProduto h5 {
+  font-size: 12px;
 }
 /*# sourceMappingURL=pesquisa.css.map */

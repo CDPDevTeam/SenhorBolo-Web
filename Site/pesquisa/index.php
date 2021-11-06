@@ -100,31 +100,38 @@ $resultado = pg_query($bancoCon, $sql);
         </header>
         <main>
             <div class="tudo">
-                <div class="resultado">
                     <h2>
                         <?php 
                             IF (isset($_GET["s"])){
                             $keyword = $_GET["s"];
-                            echo ("Resultados da busca por " . $_GET["s"]);};
+                            echo ("Resultados da busca por " . $_GET["s"]);
+                        } else {
+                            echo ("Nossos produtos");
+                        };
                         ?>
                     </h2>
-                    <div class="produtos" style="flex-wrap: wrap;">
-                        <?php
+
+                    <div class="produtos">
+
+                    <?php
                         while ($row = pg_fetch_assoc($resultado))
                         {
-                        echo ("<div class=\"produto\" style= \"margin-bottom:12px;\">" 
-                            . "<a style= \"text-decoration: none; color: #000; min-width:200px; max-width:200px;\" 
-                                href=\"produto.php?id=" 
-                            . $row["id_prod"] 
-                            . "\">"
-                            .  "<img src=\"https://realsenhorbolo.000webhostapp.com/images/bolos/" . $row["foto_prod"] . "\" alt=\"Foto do produto\" />"
-                            .  "<h4>" . $row["nome_prod"] . "</h4>"
-                            .  "<p> Preço: " . $row["preco_catprod"] . "</p>"
-                            . "</a>"
-                            . "</div>");
+                        echo (" <a href=\"produto.php?id=".$row["id_prod"]."\"> 
+                                    <div class=\"produto\">
+                                        <div class=\"fundoIMGProduto\">
+                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" />
+                                        </div>   
+                                        <div class=\"textoProduto\">
+                                            <h4>".$row["nome_prod"]."</h4>
+                                            <h5>".$row["categoria_prod_fk"]."</h5>
+                                            <h4> R".$row["preco_catprod"]."</h4>
+                                        </div>    
+                                    </div>  
+                                </a>");
                         }
-                        ?>
-                    </div>
+                    ?>
+
+                    </diV>
                 </div>
             </div>
         </main>

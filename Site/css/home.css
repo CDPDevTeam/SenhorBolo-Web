@@ -445,12 +445,20 @@ div.home div.img img {
 }
 
 div.produtos {
-  width: 100%;
-  border-radius: 20px;
   margin: 0 auto;
+  margin-right: -15px;
+  width: 100%;
 }
 
-div.produto {
+div.produtos a {
+  color: #000;
+}
+
+.produto {
+  margin-right: 15px;
+  width: 205px;
+  height: 279px;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -458,40 +466,67 @@ div.produto {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  padding-left: 20px;
-  margin-left: 10px;
-  background-color: white;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
-div.produto .teste {
-  color: black;
-}
-
-div.produto h4 {
+.fundoIMGProduto {
   -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin-top: 15px;
+      align-self: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 190px;
+  height: 190px;
+  border-radius: 20px;
+  background-color: #64CBC7;
+}
+
+.fundoIMGProduto img {
+  width: 160px;
+  height: 160px;
+}
+
+.textoProduto {
+  -ms-flex-item-align: end;
+      align-self: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 185px;
+  height: 88px;
+}
+
+.textoProduto h4, .textoProduto h5 {
+  margin-top: 0;
   margin-bottom: 0;
-  font-size: 17px;
+}
+
+.textoProduto h4 {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 19px;
   font-weight: bold;
-  text-decoration: none;
-  color: black;
 }
 
-div.produto p {
-  margin-top: 5px;
-  margin-bottom: 0;
-  text-decoration: none;
-  color: black;
-}
-
-div.produto img.teste {
-  width: 170px;
-  height: auto;
+.textoProduto h5 {
+  font-size: 12px;
 }
 
 div.titulo {

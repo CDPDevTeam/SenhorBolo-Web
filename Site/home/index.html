@@ -62,16 +62,15 @@
     <script type="text/javascript">
         $(function () {
             $('.produtos').slick({
-                variableHeight: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                lazyLoad: 'ondemand',
                 infinite: true,
                 speed: 500,
-                slidesToShow: 5, // Quantos produtos vão aparecer
-                slidesToScroll: 5, // Quantos produtos vão rolar
+                slidesToShow: 5, 
+                slidesToScroll: 5, 
             }
             );
-            $(".slick-track").css("height", 240);
-            $(".slick-track").css("width", 225); // Aqui define o height do div produtos
-            $(".slick-track").css("border-radius", 20);
         })
     </script>
     <main>
@@ -97,72 +96,97 @@
                 Os mais vendidos!
             </h2>
             <div class="produtos">
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+                
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+               
             </div>
         </div>
 
@@ -175,72 +199,96 @@
                 Ofertas
             </h2>
             <div class="produtos">
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+                
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
             </div>
         </div>
 
@@ -249,72 +297,96 @@
                 Bolos simples
             </h2>
             <div class="produtos">
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+                
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
+
+                <a href="produto.php?id="> 
+                    <div class="produto">
+                        <div class="fundoIMGProduto">
+                            <img src="https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/chocolate.png" alt="Imagem do produto" />
+                        </div>   
+                        <div class="textoProduto">
+                            <h4> Bolo de teste </h4>
+                            <h5> Bolo doce </h5>
+                            <h4> R$ 20,00</h4>
+                        </div>    
+                    </div>  
+                </a>
             </div>
         </div>
     </main>
