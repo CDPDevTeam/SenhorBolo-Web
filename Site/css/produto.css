@@ -298,6 +298,8 @@ div.tudinho div.app img.abb {
   height: 52px;
 }
 
+
+
 div.englobar {
   margin: 0 auto;
   width: 1170px;
@@ -331,7 +333,7 @@ div.englobar div.juntatu div.dados {
   padding-top: 10px;
   padding-bottom: 10px;
   width: 500px;
-  height: 430px;
+  height:450px;
   border-radius: 20px;
 }
 
@@ -344,9 +346,9 @@ div.englobar div.juntatu div.dados h4:nth-child(1n) {
 }
 
 div.englobar div.juntatu div.dados h3 {
+  color:black; 
+  font-size:35px;
   margin: 0;
-  font-size: 40px;
-  color: #707070;
 }
 
 div.englobar div.juntatu div.dados h2 {
@@ -354,8 +356,17 @@ div.englobar div.juntatu div.dados h2 {
   font-weight: bold;
 }
 
-div.englobar div.juntatu div.dados p {
-  margin: 0;
+div.englobar div.juntatu div.dados div.tamanhosBolo p {
+  font-size:17px;  
+  margin-bottom:0px;
+   margin-top:0px;
+}
+
+div.englobar div.juntatu div.dados div.nomeBolo  p {
+  font-size:24px; 
+  font-weight:bold; 
+  margin-top:15px; 
+  margin-bottom:0px;
 }
 
 div.englobar div.juntatu div.dados button.boto {
@@ -364,8 +375,6 @@ div.englobar div.juntatu div.dados button.boto {
   margin-right: 10px;
   background-color: #E6E6E6;
   color: #575757;
-  -webkit-box-shadow: 0px 3px 5px #888888;
-          box-shadow: 0px 3px 5px #888888;
   border-radius: 13px;
   border-style: none;
   font-family: "Raleway", sans-serif;
@@ -415,8 +424,6 @@ div.englobar div.juntatu div.dados button.bot {
   height: 35px;
   background-color: #E6E6E6;
   color: black;
-  -webkit-box-shadow: 0px 3px 5px #888888;
-          box-shadow: 0px 3px 5px #888888;
   border-radius: 8px;
   border-style: none;
   font-family: "Raleway", sans-serif;
@@ -450,8 +457,6 @@ div.englobar div.juntatu div.dados button.ad {
   font-size: 20px;
   color: #fff;
   border-radius: 13px;
-  -webkit-box-shadow: 0px 3px 5px #888888;
-          box-shadow: 0px 3px 5px #888888;
 }
 
 div.englobar div.juntatu div.dados button.ad p {
@@ -473,12 +478,12 @@ div.englobar div.juntatu div.imgs img.teste {
 
 div.descricao {
   margin: 0 auto;
-  width: 1120px;
+  width: 1140px;
   height: 35px;
   background-color: white;
   border-radius: 20px;
   padding: 15px;
-  margin-top: 25px;
+  margin-top: 50px;
 }
 
 div.descricao p {
@@ -491,12 +496,20 @@ div.descricao p {
 }
 
 div.produtos {
-  width: 100%;
-  border-radius: 20px;
   margin: 0 auto;
+  margin-right: -15px;
+  width: 100%;
 }
 
-div.produto {
+div.produtos a {
+  color: #000;
+}
+
+.produto {
+  margin-right: 15px;
+  width: 205px;
+  height: 279px;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -504,35 +517,67 @@ div.produto {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  padding-left: 20px;
-  margin-left: 10px;
-  background-color: white;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
-div.produto h4 {
+.fundoIMGProduto {
   -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin-top: 15px;
+      align-self: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 190px;
+  height: 190px;
+  border-radius: 20px;
+  background-color: #64CBC7;
+}
+
+.fundoIMGProduto img {
+  width: 160px;
+  height: 160px;
+}
+
+.textoProduto {
+  -ms-flex-item-align: end;
+      align-self: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 185px;
+  height: 88px;
+}
+
+.textoProduto h4, .textoProduto h5 {
+  margin-top: 0;
   margin-bottom: 0;
-  font-size: 17px;
+}
+
+.textoProduto h4 {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 19px;
   font-weight: bold;
 }
 
-div.produto p {
-  margin-top: 5px;
-  margin-bottom: 0;
+.textoProduto h5 {
+  font-size: 12px;
 }
 
-div.produto img.teste {
-  width: 170px;
-  height: auto;
-}
-
-div.titulo {
-  margin-left: 200px;
-}
 /*# sourceMappingURL=produto.css.map */

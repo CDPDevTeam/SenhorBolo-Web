@@ -1,29 +1,7 @@
 <?php
 session_start();
 include "conexao.php";
-$sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
-produto.categoria_prod_fk, categoria_produto.preco_catprod 
-FROM produto, categoria_produto
-WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod";
-
-
-IF (isset($_GET["s"]) && $_GET != ''){
-    $keyword = $_GET["s"];
-    IF ($keyword != null)
-    {
-        $sql = $sql . " AND produto.nome_prod ILIKE '%" . $_GET["s"] . "%' ORDER BY produto.nome_prod";
-
-        /**"WHERE nome_prod LIKE '%" . $_GET["s"] . "%' " . 
-        "OR massa_bolo_fk LIKE '%" . $_GET["s"] . "%' " . 
-        "OR confeito_bolo_fk LIKE '%" . $_GET["s"] . "%' " .  
-        "OR recheio_bolo_fk LIKE '%" . $_GET["s"] . "%' " . 
-        "OR cobertura_bolo_fk LIKE '%" . $_GET["s"] . "%' ";**/
-    }
-}
-
-$resultado = pg_query($bancoCon, $sql);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,17 +12,16 @@ $resultado = pg_query($bancoCon, $sql);
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/pesquisa.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <title> Resultado da Pesquisa</title>
+        <link rel="stylesheet" href="../css/mapa.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Dados do seu pedido</title>
     </head>
     <body>
         <header>
             <div id="caixao">
                 <div class="conteudoHeader">
                     <a href="../home/index.php"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
-                    
                     <div class='searchHolder'>
                         <input type="text" id="searchbig" placeholder="Digite para pesquisar" width="522" height="56" />
                         <button id="enterinvisible" onclick="myFunction();">
@@ -124,56 +101,85 @@ $resultado = pg_query($bancoCon, $sql);
             </div>
             <div id="caixinha">
                 <nav>
-                    <a href="../pesquisa/index.php">
+                <a href="../pesquisa/index.php">
                     Produtos
-                    </a>
-                    <a href="../pedidos/index.php">
-                        Meus Pedidos
-                    </a>
-                    <a href="../cupons/index.php">
-                        Cupons
-                    </a>
-                    <a href="../aboutus/index.php">
-                        Sobre nós
-                    </a>
+                </a>
+                <a href="../pedidos/index.php">
+                    Meus Pedidos
+                </a>
+                <a href="../cupons/index.php">
+                    Cupons
+                </a>
+                <a href="../aboutus/index.php">
+                    Sobre nós
+                </a>
                 </nav>
             </div>
-            <a></a>   
         </header>
         <main>
+            <div class="topos">
+                <p>
+                    Seu pedido está quase chegando, prepare-se para recebê-lo
+                </p>
+            </div>
             <div class="tudo">
-                    <h2>
-                        <?php 
-                            IF (isset($_GET["s"])){
-                            $keyword = $_GET["s"];
-                            echo ("Resultados da busca por " . $_GET["s"]);
-                        } else {
-                            echo ("Nossos produtos");
-                        };
-                        ?>
-                    </h2>
-
-                    <div class="produtos">
-
-                    <?php
-                        while ($row = pg_fetch_assoc($resultado))
-                        {
-                        echo (" <a href=\"/site/produto/index.php?id=".$row["id_prod"]."\"> 
-                                    <div class=\"produto\">
-                                        <div class=\"fundoIMGProduto\">
-                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" />
-                                        </div>   
-                                        <div class=\"textoProduto\">
-                                            <h4>".$row["nome_prod"]."</h4>
-                                            <h5>".$row["categoria_prod_fk"]."</h5>
-                                            <h4> R".$row["preco_catprod"]."</h4>
-                                        </div>    
-                                    </div>  
-                                </a>");
-                        }
-                    ?>
-
-                    </diV>
+                <div class="mapa">
+                    <div class="cima">
+                    <h3>
+                        A caminho
+                    </h3>
+                    <img src="../imagens/ic_motorcycle_24px.png" alt="Ícone de Motocicleta">
+                    </div>
+                    <div class="baixo">
+                        <img src="../imagens/sextafeira.png" alt="Mapa mostrando seu endereço">
+                    </div>
+                </div>
+                <div class="dados">
+                    <div class="textos">
+                        <p class="ab">
+                            Pedido #00001
+                        </p>
+                        <div class="chega">
+                            <img src="../imagens/ic_access_time_24px.png" alt="Ícone de Relógio">
+                            <p class="a">
+                                Chega em 39 minutos
+                            </p>
+                        </div>
+                        <p class="b">
+                            Destino:
+                        </p>
+                    </div>
+                    <div class="destino">
+                        <img src="../imagens/ic_home_24px.png" alt="Ícone de Casa">
+                        <div class="txt">
+                            <p class="ar">
+                                R. Humaitá, 638
+                            </p>
+                            <p class="br">
+                                02013-001
+                            </p>
+                        </div>
+                    </div>
+                    <p class="b">
+                       Seu pedido: 
+                    </p> 
+                    <div class="pedido">
+                        <img class="bolo" src="../imagens/66opkkln.png" alt="Bolo do Haro">
+                        <div class="txt">
+                            <p>
+                                Bolo Estrogenado
+                            </p>
+                            <div class="chega">
+                                <img class="caminhao" src="../imagens/caminhao.png" alt="Ícone de Caminhão">
+                                <p>
+                                    A caminho
+                                </p>
+                            </div>
+                            <p>
+                                R$: 20,00
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

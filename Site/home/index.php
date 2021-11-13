@@ -1,3 +1,9 @@
+<?php
+session_start();
+include "conexao.php";
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,35 +26,76 @@
     <header>
         <div id="caixao">
             <div class="conteudoHeader">
-                <a href="../home/index.html"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
-                
-                <a href="../perfil/index.html" class="linkUsuario">
+                <a href="../home/index.php"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
+                <?php 
+                if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
+                ?>
+                <a href="../perfil/index.php" class="linkUsuario">
                     <div class="perfilUsuario">
-                        <img src="../imagens/Misaka_10032.jpg" alt="Foto de perfil do usuário">
-                        <h4> Felipe Ribeiro <br> <span> Ver perfil </span></h4>
+                        <?php echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/usuario/".$_SESSION["photo"]."\" alt=\"Foto de perfil do usuário\" />"); ?>
+                        <h4> <?php echo $_SESSION['name']; ?> <br> <span> Ver perfil </span></h4>
                     </div>
                 </a>
-                <a href="../carrinho/index.html" class="linkCarrinho">
+                <a href="../carrinho/index.php" class="linkCarrinho">
                     <div class="carrinhoCompras">
                         <span class="material-icons md-30">
                             shopping_cart
                         </span>
                     </div>
                 </a>
+                <?php 
+                }else{
+                    echo("<a href=\"../login/index.php\">
+                        <button style=\"
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 160px;
+                        height: 46px;
+                        background-color: #0BBAB3;
+                        border: none;
+                        font-family: 'Raleway', sans-serif;
+                        font-weight: bold;
+                        font-size: 20px;
+                        color:#fff;
+                        border-radius: 13px;\">
+                        Fazer Login
+                        </button>
+                        </a> 
+
+                        <a href=\"../cadastro/index.php\">
+                        <button style=\"
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 160px;
+                        height: 46px;
+                        background-color: #0BBAB3;
+                        border: none;
+                        font-family: 'Raleway', sans-serif;
+                        font-weight: bold;
+                        font-size: 20px;
+                        color:#fff;
+                        border-radius: 13px;\">
+                        Fazer cadastro
+                        </button>
+                        </a> ");
+                }
+                ?>
             </div>
         </div>
         <div id="caixinha">
             <nav>
-                <a href="../pesquisa/index.html">
+                <a href="../pesquisa/index.php">
                     Produtos
                 </a>
-                <a href="../produto/personalizado/index.html">
-                    Personalizado
+                <a href="../pedidos/index.php">
+                    Meus Pedidos
                 </a>
-                <a href="../cupons/index.html">
+                <a href="../cupons/index.php">
                     Cupons
                 </a>
-                <a href="../aboutus/index.html">
+                <a href="../aboutus/index.php">
                     Sobre nós
                 </a>
             </nav>
@@ -62,16 +109,15 @@
     <script type="text/javascript">
         $(function () {
             $('.produtos').slick({
-                variableHeight: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                lazyLoad: 'ondemand',
                 infinite: true,
                 speed: 500,
-                slidesToShow: 5, // Quantos produtos vão aparecer
-                slidesToScroll: 5, // Quantos produtos vão rolar
+                slidesToShow: 5, 
+                slidesToScroll: 5, 
             }
             );
-            $(".slick-track").css("height", 240);
-            $(".slick-track").css("width", 225); // Aqui define o height do div produtos
-            $(".slick-track").css("border-radius", 20);
         })
     </script>
     <main>
@@ -80,12 +126,26 @@
                 <h2>O bolo aqui é igual sua vó:
                     pode não estar tão bonito, 
                     mas tá gostoso</h2>
-                <form>
-                    <input type="text" placeholder="Digite para pesquisar">
-                    <button type="submit">
+                <div class='searchHolder'>
+                        <input type="text" id="searchbig" placeholder="Digite para pesquisar" width="522" height="56" />
+                        <button id="enterinvisible" onclick="myFunction();">
                         <img src="../imagens/lupa.png" alt="lupa de pesquisa">
-                    </button>
-                </form>
+                        </button>
+                    </div>    
+                    <script>
+                        var input = document.getElementById("searchbig");
+                            input.addEventListener("keyup", function(event) {
+                                if (event.keyCode === 13) {
+                                    event.preventDefault();
+                                    document.getElementById("enterinvisible").click();
+                                }
+                        });
+
+                        function myFunction() {
+                            window.location.href = "/site/pesquisa/index.php?s=" + document.getElementById('searchbig').value;
+                        }
+                    </script>
+
             </div>
             <div class="img">
                 <img class="" src="../imagens/bolo-kit-katCROP.png" alt="bolo de kit kat">
@@ -94,75 +154,35 @@
         <div class="conteudoPrincipal">
         <div class="recomendados">
             <h2>
-                Os mais vendidos!
+                Mais vendidos
             </h2>
             <div class="produtos">
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
+
+                <?php
+                        $sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
+                        produto.categoria_prod_fk, categoria_produto.preco_catprod 
+                        FROM produto, categoria_produto
+                        WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod ORDER BY random()";
+
+                        $resultado = pg_query($bancoCon, $sql);
+
+                        while ($row = pg_fetch_assoc($resultado))
+                        {
+                        echo (" <a href=\"../produto/index.php?id=".$row["id_prod"]."\"> 
+                                    <div class=\"produto\">
+                                        <div class=\"fundoIMGProduto\">
+                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" />
+                                        </div>   
+                                        <div class=\"textoProduto\">
+                                            <h4>".$row["nome_prod"]."</h4>
+                                            <h5>".$row["categoria_prod_fk"]."</h5>
+                                            <h4> R".$row["preco_catprod"]."</h4>
+                                        </div>    
+                                    </div>  
+                                </a>");
+                        }
+                    ?>
+               
             </div>
         </div>
 
@@ -172,156 +192,77 @@
 
         <div class="recomendados">
             <h2>
-                Ofertas
+                Bolos Recheados
             </h2>
             <div class="produtos">
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
+
+                <?php
+                        $sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
+                        produto.categoria_prod_fk, categoria_produto.preco_catprod 
+                        FROM produto, categoria_produto
+                        WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod AND produto.categoria_prod_fk LIKE 'Bolo recheado'";
+
+                        $resultado = pg_query($bancoCon, $sql);
+
+                        while ($row = pg_fetch_assoc($resultado))
+                        {
+                        echo (" <a href=\"../produto/index.php?id=".$row["id_prod"]."\"> 
+                                    <div class=\"produto\">
+                                        <div class=\"fundoIMGProduto\">
+                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" />
+                                        </div>   
+                                        <div class=\"textoProduto\">
+                                            <h4>".$row["nome_prod"]."</h4>
+                                            <h5>".$row["categoria_prod_fk"]."</h5>
+                                            <h4> R".$row["preco_catprod"]."</h4>
+                                        </div>    
+                                    </div>  
+                                </a>");
+                        }
+                    ?>
+               
             </div>
         </div>
 
         <div class="recomendados">
             <h2>
-                Bolos simples
+                Bolos com chocolate
             </h2>
             <div class="produtos">
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
-                <div class="produto">
-                    <a class="teste" href="../produto/index.html">
-                    <img src="../imagens/bolor.png" class="teste" alt="Bolo de Chocolate">
-                    <h4>
-                        Bolo de chocolate
-                    </h4>
-                    <p>
-                        R$: 29,90
-                    </p>
-                    </a>
-                </div>
+
+                <?php
+
+                        $sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
+                        produto.categoria_prod_fk, categoria_produto.preco_catprod 
+                        FROM produto, categoria_produto
+                        WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod AND produto.nome_prod ILIKE '%chocolate%' ORDER BY random()";
+
+                        $resultado = pg_query($bancoCon, $sql);
+
+                        while ($row = pg_fetch_assoc($resultado))
+                        {
+                        echo (" <a href=\"../produto/index.php?id=".$row["id_prod"]."\"> 
+                                    <div class=\"produto\">
+                                        <div class=\"fundoIMGProduto\">
+                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" />
+                                        </div>   
+                                        <div class=\"textoProduto\">
+                                            <h4>".$row["nome_prod"]."</h4>
+                                            <h5>".$row["categoria_prod_fk"]."</h5>
+                                            <h4> R".$row["preco_catprod"]."</h4>
+                                        </div>    
+                                    </div>  
+                                </a>");
+                        }
+                    ?>
+               
             </div>
         </div>
     </main>
     <footer>
         <div class="tudinho">
             <div>
-                <a href="../home/index.html">
+                <a href="../home/index.php">
                     <img class="logro" src="../imagens/logay.png" alt="logo escrito senhor bolo">
                 </a>
                 <p class="dev">

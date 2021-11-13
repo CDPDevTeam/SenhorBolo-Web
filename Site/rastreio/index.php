@@ -1,3 +1,8 @@
+<?php
+session_start();
+include "conexao.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,23 +10,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/cadastro.css">
-    <title>Cadastro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/rastreio.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Rastreio</title>
 </head>
 <body>
     <header>
         <div id="caixao">
-            <a href="../home/index.php"><img src="../imagens/logay.png" alt="Logo escrito Senhor Bolo" width="258" height="50"></a>
-            <div class='searchHolder'>
+            <div class="conteudoHeader">
+                <a href="../home/index.php"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
+                <div class='searchHolder'>
                         <input type="text" id="searchbig" placeholder="Digite para pesquisar" width="522" height="56" />
                         <button id="enterinvisible" onclick="myFunction();">
                         <img src="../imagens/lupa.png" alt="lupa de pesquisa">
                         </button>
-            </div>    
-            <script>
-                    var input = document.getElementById("searchbig");
+                    </div>    
+                    <script>
+                        var input = document.getElementById("searchbig");
                             input.addEventListener("keyup", function(event) {
                                 if (event.keyCode === 13) {
                                     event.preventDefault();
@@ -31,9 +39,10 @@
 
                         function myFunction() {
                             window.location.href = "/site/pesquisa/index.php?s=" + document.getElementById('searchbig').value;
-                    }
-            </script>
-            <?php 
+                        }
+                    </script>
+
+                <?php 
                 if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                 ?>
                 <a href="../perfil/index.php" class="linkUsuario">
@@ -88,6 +97,7 @@
                         </a> ");
                 }
                 ?>
+            </div>
         </div>
         <div id="caixinha">
             <nav>
@@ -107,62 +117,50 @@
         </div>
     </header>
     <main>
-        <div class="login">
-            <script type="text/javascript">
-            function fMasc(objeto,mascara) {
-                obj=objeto
-                masc=mascara
-                setTimeout("fMascEx()",1)
-            }
-            function fMascEx() {
-                obj.value=masc(obj.value)
-            }
-            function mCPF(cpf){
-                cpf=cpf.replace(/\D/g,"")
-                cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
-                cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
-                cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
-                return cpf
-            }
-        </script>
-            <form method="POST" action="cadastro.php" style="display: flex; flex-direction: column; align-content: center;">
-                <img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="267" height="52">
-                
-                <div class="texto" >  
-                    <h4>
-                        Nome
-                    </h4>
-                    <input type="text" name="nome" id="nome">         
-                    <h4>
-                        E-mail
-                    </h4>
-                    <input type="text" name="login" id="login" >
-                    <h4>
-                        CPF
-                    </h4>
-                    <input type="text" name="cpf" id="cpf" onkeydown="javascript: fMasc( this, mCPF );">
-                    <h4>
-                        Senha
-                    </h4>
-                        <input type="password" name="senha" id="senha">
-                    <div class="termosUso">
-                        <h5>
-                            Eu li e concordo com os termos de uso
-                        </h5>
-                        <input type="checkbox">
+        <div class="rastrear">
+            <div class="texto">
+            <img src="../imagens/ic_edit_location_24px.png" class="imagem" alt="Ícone de Marcação">
+            <h3>
+                Onde deseja que entreguemos seu pedido?
+            </h3>
+            </div>
+            <form>
+                <input type="text">
+                <button type="submit">
+                    <img src="../imagens/lupa.png" alt="lupa de pesquisa">
+                </button>
+            </form>
+            <div class="enderecos">
+                <div class="endereco">
+                    <div>
+                        <img src="../imagens/ic_home_24px.png" alt="Ícone de Casa" class="img">
+                    </div>
+                    <div>
+                        <p> R. WhatsApp, 125</p>
+                        <p> 02013-001</p>
                     </div>
                 </div>
-                <a href="../home/index.php">
-                    <button class="loginbotao" type="submit" style="margin-left:20px;" value="cadastrar" id="cadastrar" name="cadastrar" >   
-                        <h3>
-                            Cadastrar
-                        </h3>
-                    </button>
-                </a>
-            </form>
+                <div class="endereco">
+                    <div>
+                        <img src="../imagens/ic_home_24px.png" alt="Ícone de Casa" class="img">
+                    </div>
+                    <div>
+                        <p> R. WhatsApp, 125</p>
+                        <p> 02013-001</p>
+                    </div>
+                </div>
+                <div class="endereco">
+                    <div>
+                        <img src="../imagens/ic_home_24px.png" alt="Ícone de Casa" class="img">
+                    </div>
+                    <div>
+                        <p> R. WhatsApp, 125</p>
+                        <p> 02013-001</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
-
     <footer>
         <div class="tudinho">
             <div>
@@ -216,6 +214,5 @@
             </div>
         </div>
     </footer>
-    
 </body>
 </html>

@@ -24,10 +24,16 @@ if(pg_num_rows($result) == 1)
 	$row = pg_fetch_assoc($result);
 	if($row['email_cli'] == $uname && $row['senha_cli'] == $pass) 
 	{
-		header("Location: ../home/index.html");
+		echo"<script language='javascript' type='text/javascript'>alert('Login efetuado com sucesso');window.location.href='../home/index.php'</script>";
+
+            $_SESSION['name'] = $row['nome_cli'];
+            $_SESSION['photo'] = $row['foto_cli'];
+            $_SESSION['id'] = $row['email_cli'];
+}else{
+		echo"<script language='javascript' type='text/javascript'>alert('Esse usuário não pode fazer login');window.location.href='../home/index.php'</script>";
 	}
-	else{
-		header("Location: index.php?error=voce ta escrevendo errado tiw");
-	}
+}else
+{
+	echo"<script language='javascript' type='text/javascript'>alert('Usuário e/ou senha incorretos');window.location.href='../login/index.php'</script>";
 }
 ?>

@@ -13,26 +13,94 @@
 <body>
     <header>
         <div id="caixao">
-            <a href="../home/index.html"><img src="../imagens/logay.png" alt="Logo escrito Senhor Bolo" width="258" height="50"></a>
-            <form>
-                <input type="text" placeholder="Digite para pesquisar">
-                <button type="submit">
-                    <img src="../imagens/lupa.png" alt="lupa de pesquisa">
-                </button>
-            </form>
+            <a href="../home/index.php"><img src="../imagens/logay.png" alt="Logo escrito Senhor Bolo" width="258" height="50"></a>
+            <div class='searchHolder'>
+                        <input type="text" id="searchbig" placeholder="Digite para pesquisar" width="522" height="56" />
+                        <button id="enterinvisible" onclick="myFunction();">
+                        <img src="../imagens/lupa.png" alt="lupa de pesquisa">
+                        </button>
+                    </div>    
+                    <script>
+                        var input = document.getElementById("searchbig");
+                            input.addEventListener("keyup", function(event) {
+                                if (event.keyCode === 13) {
+                                    event.preventDefault();
+                                    document.getElementById("enterinvisible").click();
+                                }
+                        });
+
+                        function myFunction() {
+                            window.location.href = "/site/pesquisa/index.php?s=" + document.getElementById('searchbig').value;
+                        }
+                    </script>
+<?php 
+                if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
+                ?>
+                <a href="../perfil/index.php" class="linkUsuario">
+                    <div class="perfilUsuario">
+                        <?php echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/usuario/".$_SESSION["photo"]."\" alt=\"Foto de perfil do usuário\" />"); ?>
+                        <h4> <?php echo $_SESSION['name']; ?> <br> <span> Ver perfil </span></h4>
+                    </div>
+                </a>
+                <a href="../carrinho/index.php" class="linkCarrinho">
+                    <div class="carrinhoCompras">
+                        <span class="material-icons md-30">
+                            shopping_cart
+                        </span>
+                    </div>
+                </a>
+                <?php 
+                }else{
+                    echo("<a href=\"../login/index.php\">
+                        <button style=\"
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 160px;
+                        height: 46px;
+                        background-color: #0BBAB3;
+                        border: none;
+                        font-family: 'Raleway', sans-serif;
+                        font-weight: bold;
+                        font-size: 20px;
+                        color:#fff;
+                        border-radius: 13px;\">
+                        Fazer Login
+                        </button>
+                        </a> 
+
+                        <a href=\"../cadastro/index.php\">
+                        <button style=\"
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 160px;
+                        height: 46px;
+                        background-color: #0BBAB3;
+                        border: none;
+                        font-family: 'Raleway', sans-serif;
+                        font-weight: bold;
+                        font-size: 20px;
+                        color:#fff;
+                        border-radius: 13px;\">
+                        Fazer cadastro
+                        </button>
+                        </a> ");
+                }
+                ?>
         </div>
         <div id="caixinha">
             <nav>
-                <a href="../pesquisa/index.html">
+                <a href="../pesquisa/index.php">
                     Produtos
                 </a>
-                <a href="../produto/personalizado/index.html">
-                    Personalizado
+                <a href="../pedidos/index.php">
+                    Meus Pedidos
                 </a>
-                <a href="../cupons/index.html">
+                <a href="../cupons/index.php">
                     Cupons
                 </a>
-                <a href="../aboutus/index.html">
+                <a href="../aboutus/index.php">
                     Sobre nós
                 </a>
             </nav>
@@ -68,7 +136,7 @@
                         </h3>
                     </button>
                 </form>
-                <a class="naocadastro" href="../cadastro/index.html">
+                <a class="naocadastro" href="../cadastro/index.php">
                     Não tenho cadastro
                 </a>
             
@@ -77,7 +145,7 @@
     <footer>
         <div class="tudinho">
             <div>
-                <a href="../home/index.html">
+                <a href="../home/index.php">
                     <img class="logro" src="../imagens/logay.png" alt="logo escrito senhor bolo">
                 </a>
                 <p class="dev">

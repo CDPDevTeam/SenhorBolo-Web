@@ -7,6 +7,7 @@ $nome = $_POST['nome'];
 $login = $_POST['login'];
 $cpf = $_POST['cpf'];
 $senha = $_POST['senha'];
+$foto = "defaultpicture.png";
 
 $query_select = "SELECT email_cli FROM cliente WHERE email_cli = '$login'";
 
@@ -22,7 +23,7 @@ if($login == "" || $login == null){
 
     }else{
 
-      $query = "INSERT INTO cliente (nome_cli,email_cli,cpf_cli,senha_cli) VALUES ('$nome','$login','$cpf','$senha')";
+      $query = "INSERT INTO cliente (nome_cli,email_cli,cpf_cli,senha_cli,foto_cli) VALUES ('$nome','$login','$cpf','$senha','$foto')";
 
       $insert = pg_query($bancoCon, $query);
 
