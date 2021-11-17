@@ -1,9 +1,8 @@
 <?php
 session_start();
-include "conexao.php";
-
-
+require_once '../class/produto.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -159,29 +158,26 @@ include "conexao.php";
             <div class="produtos">
 
                 <?php
-                        $sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
-                        produto.categoria_prod_fk, categoria_produto.preco_catprod 
-                        FROM produto, categoria_produto
-                        WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod ORDER BY random()";
 
-                        $resultado = pg_query($bancoCon, $sql);
+                        $produto = new Produto();
 
-                        while ($row = pg_fetch_assoc($resultado))
-                        {
-                        echo (" <a href=\"../produto/index.php?id=".$row["id_prod"]."\"> 
+                        $bolo = $produto->listProduct();
+
+                        for($i = 0; $i < sizeof($bolo); $i++){
+                            echo (" <a href=\"/site/produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
                                     <div class=\"produto\">
                                         <div class=\"fundoIMGProduto\">
-                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" />
+                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[$i]["foto_prod"]."\" alt=\"Imagem do produto\" />
                                         </div>   
                                         <div class=\"textoProduto\">
-                                            <h4>".$row["nome_prod"]."</h4>
-                                            <h5>".$row["categoria_prod_fk"]."</h5>
-                                            <h4> R".$row["preco_catprod"]."</h4>
+                                            <h4>".$bolo[$i]["nome_prod"]."</h4>
+                                            <h5>".$bolo[$i]["categoria_prod_fk"]."</h5>
+                                            <h4> R".$bolo[$i]["preco_catprod"]."</h4>
                                         </div>    
                                     </div>  
                                 </a>");
                         }
-                    ?>
+                ?>
                
             </div>
         </div>
@@ -197,64 +193,53 @@ include "conexao.php";
             <div class="produtos">
 
                 <?php
-                        $sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
-                        produto.categoria_prod_fk, categoria_produto.preco_catprod 
-                        FROM produto, categoria_produto
-                        WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod AND produto.categoria_prod_fk LIKE 'Bolo recheado'";
+                        $produto = new Produto();
+                        $bolo = $produto->getCakeCategory('Bolo recheado');
 
-                        $resultado = pg_query($bancoCon, $sql);
-
-                        while ($row = pg_fetch_assoc($resultado))
-                        {
-                        echo (" <a href=\"../produto/index.php?id=".$row["id_prod"]."\"> 
+                        for($i = 0; $i < sizeof($bolo); $i++){
+                            echo (" <a href=\"/site/produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
                                     <div class=\"produto\">
                                         <div class=\"fundoIMGProduto\">
-                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" />
+                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[$i]["foto_prod"]."\" alt=\"Imagem do produto\" />
                                         </div>   
                                         <div class=\"textoProduto\">
-                                            <h4>".$row["nome_prod"]."</h4>
-                                            <h5>".$row["categoria_prod_fk"]."</h5>
-                                            <h4> R".$row["preco_catprod"]."</h4>
+                                            <h4>".$bolo[$i]["nome_prod"]."</h4>
+                                            <h5>".$bolo[$i]["categoria_prod_fk"]."</h5>
+                                            <h4> R".$bolo[$i]["preco_catprod"]."</h4>
                                         </div>    
                                     </div>  
                                 </a>");
                         }
-                    ?>
+                ?>
                
             </div>
         </div>
 
         <div class="recomendados">
             <h2>
-                Bolos com chocolate
+                Bolos tradicionais
             </h2>
             <div class="produtos">
 
-                <?php
+               <?php
+                        $produto = new Produto();
+                        $bolo = $produto->getCakeCategory('Bolo Tradicional');
 
-                        $sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
-                        produto.categoria_prod_fk, categoria_produto.preco_catprod 
-                        FROM produto, categoria_produto
-                        WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod AND produto.nome_prod ILIKE '%chocolate%' ORDER BY random()";
-
-                        $resultado = pg_query($bancoCon, $sql);
-
-                        while ($row = pg_fetch_assoc($resultado))
-                        {
-                        echo (" <a href=\"../produto/index.php?id=".$row["id_prod"]."\"> 
+                        for($i = 0; $i < sizeof($bolo); $i++){
+                            echo (" <a href=\"/site/produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
                                     <div class=\"produto\">
                                         <div class=\"fundoIMGProduto\">
-                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" />
+                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[$i]["foto_prod"]."\" alt=\"Imagem do produto\" />
                                         </div>   
                                         <div class=\"textoProduto\">
-                                            <h4>".$row["nome_prod"]."</h4>
-                                            <h5>".$row["categoria_prod_fk"]."</h5>
-                                            <h4> R".$row["preco_catprod"]."</h4>
+                                            <h4>".$bolo[$i]["nome_prod"]."</h4>
+                                            <h5>".$bolo[$i]["categoria_prod_fk"]."</h5>
+                                            <h4> R".$bolo[$i]["preco_catprod"]."</h4>
                                         </div>    
                                     </div>  
                                 </a>");
                         }
-                    ?>
+                ?>
                
             </div>
         </div>

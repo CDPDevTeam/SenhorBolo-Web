@@ -1,6 +1,13 @@
 <?php
-session_start();
-include "conexao.php";
+    session_start();
+    require_once '../class/produto.php';
+    $produto = new Produto();
+    $bolo = $produto->getCake($_GET['id']);
+
+    if ($bolo == null)
+    {
+        echo"<script language='javascript' type='text/javascript'>alert('Produto não encontrado');window.location.href='../pesquisa/index.php'</script>";
+    }
 ?>
 
 
@@ -145,52 +152,16 @@ include "conexao.php";
         <div class="englobar">
             <div class="imagem" style="background-color:white; border-radius: 20px; width:70%; display: flex; align-content: center; height:593px;">
                 <?php
-                $sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
-                produto.categoria_prod_fk, categoria_produto.preco_catprod 
-                FROM produto, categoria_produto
-                WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod";
-
-
-                IF (isset($_GET["id"]) && $_GET != ''){
-                    $keyword = $_GET["id"];
-                    IF ($keyword != null)
-                    {
-                        $sql = $sql . " AND produto.id_prod = '" . $_GET["id"] . "' ORDER BY produto.nome_prod";
-                    }
-                }
-
-                $resultado = pg_query($bancoCon, $sql);
-                 while ($row = pg_fetch_assoc($resultado)){
-
-                    echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" />");
-                }
+                    
+                    echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[0]['foto_prod']."\" alt=\"Imagem do produto\" class=\"teste\"/>");
                 ?>
             </div>
             <div class="juntatu">
                 <div class="dados">
                     <?php
-                        $sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
-                         produto.categoria_prod_fk, categoria_produto.preco_catprod 
-                        FROM produto, categoria_produto
-                        WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod";
-
-
-                        IF (isset($_GET["id"]) && $_GET != ''){
-                            $keyword = $_GET["id"];
-                            IF ($keyword != null)
-                            {
-                                $sql = $sql . " AND produto.id_prod = '" . $_GET["id"] . "' ORDER BY produto.nome_prod";
-                            }
-                        }
-
-                        $resultado = pg_query($bancoCon, $sql);
-
-                        while ($row = pg_fetch_assoc($resultado)){
-                            echo("<div class=\"nomeBolo\">
-                                    <h2>" . $row["nome_prod"] . "</h2>"
-                                    . "<p>" . $row["categoria_prod_fk"] . "</p>" . "</div>" . "<h3 id=\"preco\">" . $row["preco_catprod"] . "</h3>"
-                                );
-                            }
+                        echo("<div class=\"nomeBolo\">
+                                <h2>" . $bolo[0]['nome_prod'] . "</h2>" . "<p>" . $bolo[0]['categoria_prod_fk'] . "</p>" . "</div>" . "<h3 id=\"preco\">" . $bolo[0]['preco_catprod'] . "</h3>"
+                            );
                         ?>
                     <div class="tamanhosBolo">
                         <h4>
@@ -281,46 +252,12 @@ include "conexao.php";
                 <div class="imgs">
                     <button>
                         <?php
-                            $sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
-                            produto.categoria_prod_fk, categoria_produto.preco_catprod 
-                            FROM produto, categoria_produto
-                            WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod";
-
-
-                            IF (isset($_GET["id"]) && $_GET != ''){
-                                $keyword = $_GET["id"];
-                                IF ($keyword != null)
-                                {
-                                    $sql = $sql . " AND produto.id_prod = '" . $_GET["id"] . "' ORDER BY produto.nome_prod";
-                                }
-                            }
-
-                            $resultado = pg_query($bancoCon, $sql);
-                            while ($row = pg_fetch_assoc($resultado)){
-                            echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" class=\"teste\"/>");
-                            }
+                            echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[0]['foto_prod']."\" alt=\"Imagem do produto\" class=\"teste\"/>");
                         ?>
                     </button>
                     <button>
                         <?php
-                            $sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
-                            produto.categoria_prod_fk, categoria_produto.preco_catprod 
-                            FROM produto, categoria_produto
-                            WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod";
-
-
-                            IF (isset($_GET["id"]) && $_GET != ''){
-                                $keyword = $_GET["id"];
-                                IF ($keyword != null)
-                                {
-                                    $sql = $sql . " AND produto.id_prod = '" . $_GET["id"] . "' ORDER BY produto.nome_prod";
-                                }
-                            }
-
-                            $resultado = pg_query($bancoCon, $sql);
-                            while ($row = pg_fetch_assoc($resultado)){
-                            echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" class=\"teste\"/>");
-                            }
+                            echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[0]['foto_prod']."\" alt=\"Imagem do produto\" class=\"teste\"/>");
                         ?>
                     </button>
                 </div>
@@ -338,32 +275,29 @@ include "conexao.php";
             <h2>
                 Bolos recomendados
             </h2>
+        
             <div class="produtos">
 
                 <?php
-                        $sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
-                        produto.categoria_prod_fk, categoria_produto.preco_catprod 
-                        FROM produto, categoria_produto
-                        WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod ORDER BY random()";
+                        $teste = new Produto();
 
-                        $resultado = pg_query($bancoCon, $sql);
+                        $bolo = $teste->listProduct();
 
-                        while ($row = pg_fetch_assoc($resultado))
-                        {
-                        echo (" <a href=\"/site/produto/index.php?id=".$row["id_prod"]."\"> 
+                        for($i = 0; $i < sizeof($bolo); $i++){
+                            echo (" <a href=\"/site/produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
                                     <div class=\"produto\">
                                         <div class=\"fundoIMGProduto\">
-                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" />
+                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[$i]["foto_prod"]."\" alt=\"Imagem do produto\" />
                                         </div>   
                                         <div class=\"textoProduto\">
-                                            <h4>".$row["nome_prod"]."</h4>
-                                            <h5>".$row["categoria_prod_fk"]."</h5>
-                                            <h4> R".$row["preco_catprod"]."</h4>
+                                            <h4>".$bolo[$i]["nome_prod"]."</h4>
+                                            <h5>".$bolo[$i]["categoria_prod_fk"]."</h5>
+                                            <h4> R".$bolo[$i]["preco_catprod"]."</h4>
                                         </div>    
                                     </div>  
                                 </a>");
                         }
-                    ?>
+                ?>
                
             </div>
         </div>

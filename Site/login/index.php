@@ -33,7 +33,7 @@
                             window.location.href = "/site/pesquisa/index.php?s=" + document.getElementById('searchbig').value;
                         }
                     </script>
-<?php 
+                <?php 
                 if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                 ?>
                 <a href="../perfil/index.php" class="linkUsuario">
@@ -119,11 +119,11 @@
                         <h4>
                             E-mail
                         </h4>
-                        <input type="text" name="uname">
+                        <input type="text" name="uname" id="email">
                         <h4>
                             Senha
                         </h4>
-                            <input type="password" name="password">
+                            <input type="password" name="password" id="senha">
                             
                         <br>
                         <a id="resetSenha" href="#">

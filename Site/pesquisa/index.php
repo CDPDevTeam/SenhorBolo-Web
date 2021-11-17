@@ -1,27 +1,18 @@
 <?php
 session_start();
-include "conexao.php";
-$sql = "SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
-produto.categoria_prod_fk, categoria_produto.preco_catprod 
-FROM produto, categoria_produto
-WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod";
-
-
-IF (isset($_GET["s"]) && $_GET != ''){
-    $keyword = $_GET["s"];
-    IF ($keyword != null)
+    require_once '../class/produto.php';
+    $produto = new Produto();
+    
+    if(isset($_GET['s'])){
+        $bolo = $produto->search($_GET['s']);
+        if($bolo == null)
+        {
+            echo"<script language='javascript' type='text/javascript'>alert('Produtos não encontrados');window.location.href='../pesquisa/index.php'</script>";
+        }
+    }else
     {
-        $sql = $sql . " AND produto.nome_prod ILIKE '%" . $_GET["s"] . "%' ORDER BY produto.nome_prod";
-
-        /**"WHERE nome_prod LIKE '%" . $_GET["s"] . "%' " . 
-        "OR massa_bolo_fk LIKE '%" . $_GET["s"] . "%' " . 
-        "OR confeito_bolo_fk LIKE '%" . $_GET["s"] . "%' " .  
-        "OR recheio_bolo_fk LIKE '%" . $_GET["s"] . "%' " . 
-        "OR cobertura_bolo_fk LIKE '%" . $_GET["s"] . "%' ";**/
+        $bolo = $produto->search('');
     }
-}
-
-$resultado = pg_query($bancoCon, $sql);
 ?>
 
 
@@ -145,28 +136,28 @@ $resultado = pg_query($bancoCon, $sql);
                     <h2>
                         <?php 
                             IF (isset($_GET["s"])){
-                            $keyword = $_GET["s"];
-                            echo ("Resultados da busca por " . $_GET["s"]);
-                        } else {
-                            echo ("Nossos produtos");
-                        };
+                                $keyword = $_GET["s"];
+                                echo ("Resultados da busca por " . $_GET["s"]);
+                            } else {
+                                echo ("Nossos produtos");
+                            };
                         ?>
                     </h2>
 
                     <div class="produtos">
 
                     <?php
-                        while ($row = pg_fetch_assoc($resultado))
-                        {
-                        echo (" <a href=\"/site/produto/index.php?id=".$row["id_prod"]."\"> 
+                        
+                        for($i = 0; $i < sizeof($bolo); $i++){
+                            echo (" <a href=\"/site/produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
                                     <div class=\"produto\">
                                         <div class=\"fundoIMGProduto\">
-                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$row["foto_prod"]."\" alt=\"Imagem do produto\" />
+                                            <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[$i]["foto_prod"]."\" alt=\"Imagem do produto\" />
                                         </div>   
                                         <div class=\"textoProduto\">
-                                            <h4>".$row["nome_prod"]."</h4>
-                                            <h5>".$row["categoria_prod_fk"]."</h5>
-                                            <h4> R".$row["preco_catprod"]."</h4>
+                                            <h4>".$bolo[$i]["nome_prod"]."</h4>
+                                            <h5>".$bolo[$i]["categoria_prod_fk"]."</h5>
+                                            <h4> R".$bolo[$i]["preco_catprod"]."</h4>
                                         </div>    
                                     </div>  
                                 </a>");
