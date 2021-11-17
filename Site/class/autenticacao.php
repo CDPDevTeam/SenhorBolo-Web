@@ -38,7 +38,7 @@ class User{
 			":foto" => $foto
 			);
 			$cad = $sql->select('INSERT INTO cliente (nome_cli,email_cli,cpf_cli,senha_cli,foto_cli) VALUES (:nome, :email, :cpf, :senha, :foto)', $parametros);
-			return $cad;
+			echo"<script language='javascript' type='text/javascript'>alert('Usuário cadastrado com sucesso');window.location.href='../login/index.php';</script>";
 		}
 	}
 }
