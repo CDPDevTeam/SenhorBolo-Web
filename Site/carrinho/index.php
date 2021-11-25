@@ -13,6 +13,7 @@ include "conexao.php";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/carrinho.css">
+    <link rel="icon" type="image/png" href="../imagens/favicon.png"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title> Carrinho de compras </title>
 </head>
@@ -392,7 +393,7 @@ include "conexao.php";
                             </h2>
                         </div>
                     </div>
-                    <a href="../pedidos/index.php">
+                    <a href="../checkout/index.php">
                         <button class="compra">
                             <p>
                                 Fechar a Compra

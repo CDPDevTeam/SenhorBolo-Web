@@ -147,94 +147,7 @@ include "conexao.php";
 
             <div class="dadosUsuario">
      
-                <div class="metodosPagamento">
-                    <h2>
-                        Métodos de Pagamento
-                    </h2>
-                    <div class="cartoes">
-                        <div class="detalheCartao">
-                            <img src="../imagens/logoMastercard.png" alt="Operadora do cartão">
-                            <h3> 0000 </h3>
-                        </div>
-    
-                        <div class="detalheCartao">
-                            <img src="../imagens/logoMastercard.png" alt="Operadora do cartão">
-                            <h3> 0000 </h3>
-                        </div>
-                        
-                        <div class="detalheCartao">
-                            <img src="../imagens/logoMastercard.png" alt="Operadora do cartão">
-                            <h3> 0000 </h3>
-                        </div>
-    
-                        <div class="detalheCartao">
-                            <img src="../imagens/logoMastercard.png" alt="Operadora do cartão">
-                            <h3> 0000 </h3>
-                        </div>
-    
-                        <button class="adicionar" id="adicionarCartao" type="button">
-                            <span class="material-icons md-50">
-                                add
-                            </span>
-                        </button>
-                    </div>
-                </div>
-               
-                <h2> Adicionar um cartão </h2>
-                <div class="adicionarCartao">
-                    <div class="cartaoContainer">
-                        <div class="cartaoCredito">
-
-                            <div class="cartaoFrente">
-                                <div class="bandeiraCartao"></div>
-                                <div class="numeroCartao"> 1256 9856 1049 1568 </div>
-                                <div class="nomeCartao"> Marcia Xavier Cury </div>
-                                <div class="validadeCartao">
-                                    <h6> Válido <br> até </h6>
-                                    <h5> 00/00 </h5>
-                                </div>
-                            </div>
-
-                            <div class="cartaoVerso">
-                                <div class="faixaPreta"></div>
-                                <div class="assinaturaAutorizada">
-                                    <div class="bandeiraCartao"></div>
-                                    <div>
-                                        <h6> Assinatura Autorizada </h6>
-                                        <div class="faixaBranca">
-                                            <h5> 000 </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="informacoesCartao">
-                        <div>
-                            <h4> Número do cartão </h4>
-                            <input type="text" class="grande">
-                        </div>
-
-                        <div>
-                            <h4> Nome do titular </h4>
-                            <input type="text" class="grande">
-                        </div>
-
-                        <div class="informacoesCurtas">
-                            <div>
-                                <h4> Data de validade </h4>
-                                <input type="text">
-                            </div>
-
-                            <div>
-                                <h4> CVV </h4>
-                                <input type="text">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+                
 
                 <div class="enderecosEntrega">
                     <h2>
@@ -273,12 +186,13 @@ include "conexao.php";
                                 03080-000 
                             </h3>
                         </div>
-    
+                        <a href="../rastreio/index.php">
                         <button class="adicionar" id="adicionarEndereco" type="button">
                             <span class="material-icons md-50">
                                 add
                             </span>
                         </button>
+            </a>
                     </div>
                 </div>
                 
