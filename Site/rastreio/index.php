@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "conexao.php";
+require_once '../class/perfil.php';
 ?>
 
 <!DOCTYPE html>
@@ -132,7 +132,23 @@ include "conexao.php";
                 </button>
             </form>
             <div class="enderecos">
-                <div class="endereco">
+                <?php
+                    $user = new Perfil();
+                    $endereco = $user->getAdress($_SESSION['id']);
+
+                    for($i = 0; $i < sizeof($endereco); $i++){
+                         echo ("<div class=\"endereco\">
+                    <div>
+                        <img src=\"../imagens/ic_home_24px.png\" alt=\"Ícone de Casa\" class=\"img\">
+                    </div>
+                    <div>
+                        <p>" . $endereco[$i]["rua"] . ", " . $endereco[$i]["numero"] . "</p>
+                        <p>" . $endereco[$i]["cep"] . "</p>
+                    </div>
+                </div>");
+                    }
+                ?>
+                <!--<div class="endereco">
                     <div>
                         <img src="../imagens/ic_home_24px.png" alt="Ícone de Casa" class="img">
                     </div>
@@ -158,7 +174,7 @@ include "conexao.php";
                         <p> R. WhatsApp, 125</p>
                         <p> 02013-001</p>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </main>

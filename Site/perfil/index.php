@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "conexao.php";
+require_once '../class/perfil.php';
 ?>
 
 
@@ -124,27 +124,35 @@ include "conexao.php";
             <div class="caixaUsuario">
                 <div class="caixaTurquesa">
                     <div class="imagemUsuario">
-                        <img src="../imagens/Misaka_10032.jpg" alt="Foto de perfil do usuário">
+                        <?php 
+                        if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
+                        ?>
+                        <?php echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/usuario/".$_SESSION["photo"]."\" alt=\"Foto de perfil do usuário\" />"); ?>
                         <button type="button">
                             <span class="material-icons md-40"> edit </span>
                         </button>
                     </div>
-                    <h2> Felipe Ribossomo </h2>
+                    <h2> <?php echo $_SESSION['name']; ?> </h2>
                 </div>
+
                 <div class="detalhesUsuario">
                     <div class="detalheUsuario">
                         <span class="material-icons"> person </span>
-                        <h3> Luiz Ricardo de Souza </h3>
-                        <h3> 535.***.***-17 </h3>
+                        <h3> <?php echo $_SESSION['name']; ?> </h3>
+                        <h3> <?php echo $_SESSION['cpf']; ?> </h3>
                     </div>
                     <div class="detalheUsuario">
                         <span class="material-icons"> mail </span>
-                        <h3> thespacefox@protonmail.com </h3>
+                        <h3> <?php echo $_SESSION['id']; ?> </h3>
                     </div>
+                    <?php 
+                    }else
+                    {
+                        echo"<script language='javascript' type='text/javascript'>alert('Você não está logado');window.location.href='../home/index.php'</script>";
+                    }?>
                     <button type="button" id="editarInformacoes"> Editar </button>
                 </div>
             </div>
-
             <div class="dadosUsuario">
      
                 
@@ -154,7 +162,23 @@ include "conexao.php";
                         Endereços de Entrega
                     </h2>
                     <div class="enderecos">
-                        <div class="detalheEndereco">
+                        <?php 
+
+                            $user = new Perfil();
+                            $endereco = $user->getAdress($_SESSION['id']);
+                            
+                            for($i = 0; $i < sizeof($endereco); $i++){
+                                echo ("<div class=\"detalheEndereco\">
+                                        <span class=\"material-icons md-50\">
+                                            home
+                                        </span>
+                                        <h3>" . $endereco[$i]["rua"] . "<br> " . $endereco[$i]["numero"] . "<br>" . 
+                                        $endereco[$i]["complemento"] . "<br>" . $endereco[$i]["cep"] . 
+                                            "</h3> 
+                                        </div>");
+                            }
+                        ?>
+                        <!--<div class="detalheEndereco">
                             <span class="material-icons md-50">
                                 home
                             </span>
@@ -185,14 +209,14 @@ include "conexao.php";
                                 32B <br>
                                 03080-000 
                             </h3>
-                        </div>
+                        </div>-->
                         <a href="../rastreio/index.php">
                         <button class="adicionar" id="adicionarEndereco" type="button">
                             <span class="material-icons md-50">
                                 add
                             </span>
                         </button>
-            </a>
+                        </a>
                     </div>
                 </div>
                 
@@ -205,10 +229,10 @@ include "conexao.php";
                         </button>
                     </div>
                     <div class="deletar">
-                        <h2> Deletar minha conta </h2>
+                        <h2> Desconectar de minha conta </h2>
                         <button type="button"> 
                             <span class="material-icons md-35"> delete_forever </span>
-                            Deletar 
+                            Desconectar
                         </button>
                     </div>
                 

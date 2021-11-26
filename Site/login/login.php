@@ -15,6 +15,7 @@ if(count($login) == 1){
 	    $_SESSION['name'] = $login[0]['nome_cli'];
 	    $_SESSION['photo'] = $login[0]['foto_cli'];
 	    $_SESSION['id'] = $login[0]['email_cli'];
+	    $_SESSION['cpf'] = $login[0]['cpf_cli'];
 	}
 	else
 	{
