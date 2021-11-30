@@ -9,8 +9,8 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Fazer as telas do site em HTML/CSS
-- [ ] Conversão dos elementos para ASP.Net
+- [ ] Conversão das telas para PHP
 - [ ] Conexão com o Banco de Dados
-- [ ] Programação no padrão MVC
+- [ ] POO
 - [ ] Testes de qualidade
 - [ ] Lançamento
