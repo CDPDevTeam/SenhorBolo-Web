@@ -1,6 +1,16 @@
 <?php
 session_start();
-include "conexao.php";
+
+$totalCarrinho = 0;
+
+foreach($_SESSION['carrinho'] as $bolo){
+    $teste = explode('$', $bolo['preco']);
+    $testeAux = explode('.', $teste[1]);
+
+    $valor = (int)$testeAux[0];
+    $totalCarrinho += $valor * $bolo['qtd'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +22,7 @@ include "conexao.php";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../css/carrinho.css">
     <link rel="icon" type="image/png" href="../imagens/favicon.png"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -41,7 +52,7 @@ include "conexao.php";
                             window.location.href = "/site/pesquisa/index.php?s=" + document.getElementById('searchbig').value;
                         }
                     </script>
-<?php 
+                <?php 
                 if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                 ?>
                 <a href="../perfil/index.php" class="linkUsuario">
@@ -118,7 +129,7 @@ include "conexao.php";
     <main>
         <div class="tudo">
             <div class="titulol">
-                <img src="../imagens/carrinho.png" alt=" ícone de carrinho">
+                <i class="material-icons" style="font-size: 45px">shopping_cart</i>
                 <p>
                     Meu Carrinho
                 </p>
@@ -126,257 +137,48 @@ include "conexao.php";
 
             <div class="englobar">
                 <div class="lista">
-                    <div class="baixo">
-                        <img src="../imagens/retangulo.png" alt="retângulo ciano">
-                        <img src="../imagens/bolobrigas.png" alt="bolo de chocolate" class="bolo">
-                        <div>
-                            <p class="boloTitulo">
-                                Bolo de bolo
-                            </p>
-                            <p class="boloLegenda">
-                                Bolo doce
-                            </p>
-                        </div>
-                        <div class="quantidadeBolo">
-                            <h4>
-                                Quantidade
-                            </h4>
-                            <div class="qtd">
-                                <button class="bot">
-                                    <p>
-                                        -
-                                    </p>
-                                </button>
-                                <input class="qtd" type="text">
-                                <button class="bot">
-                                    <p>
-                                        +
-                                    </p>
-                                </button>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="fino">
-                                Total
-                            </p>
-                            <p class="bold">
-                                R$: 25,00
-                            </p>
-                        </div> 
-                        <button class="lixo">
-                            <img src="../imagens/lixeira.png" alt="ícone de lixeira">
-                        </button>
-                    </div>
+                <?php 
 
-                    <div class="baixo">
-                        <img src="../imagens/retangulo.png" alt="retângulo ciano">
-                        <img src="../imagens/bolobrigas.png" alt="bolo de chocolate" class="bolo">
-                        <div>
-                            <p class="boloTitulo">
-                                Bolo de bolo
-                            </p>
-                            <p class="boloLegenda">
-                                Bolo doce
-                            </p>
-                        </div>
-                        <div class="quantidadeBolo">
-                            <h4>
-                                Quantidade
-                            </h4>
-                            <div class="qtd">
-                                <button class="bot">
-                                    <p>
-                                        -
+                            foreach($_SESSION['carrinho'] as $posicaoArray  => $bolo){
+                                echo "<div class=\"baixo\">
+                                <div class=\"fundoCiano\">
+                                <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo['imagem']."\" alt=\"bolo de chocolate\" class=\"bolo\">    
+                                </div>                            
+                                <div>
+                                    <p class=\"boloTitulo\">".$bolo['nome']."</p>
+                                    <p class=\"boloLegenda\">".$bolo['cat']."</p>
+                                </div>
+                                <div class=\"quantidadeBolo\">
+                                    <h4>
+                                        Quantidade
+                                    </h4>
+                                    <div class=\"qtd\">
+                                        <button class=\"bot\">
+                                            <p>
+                                                -
+                                            </p>
+                                        </button>
+                                        <input class=\"qtd\" type=\"text\" value=\"".$bolo['qtd']."\">
+                                        <button class=\"bot\">
+                                            <p>
+                                                +
+                                            </p>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class=\"fino\">
+                                        Total
                                     </p>
-                                </button>
-                                <input class="qtd" type="text">
-                                <button class="bot">
-                                    <p>
-                                        +
-                                    </p>
-                                </button>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="fino">
-                                Total
-                            </p>
-                            <p class="bold">
-                                R$: 25,00
-                            </p>
-                        </div> 
-                        <button class="lixo">
-                            <img src="../imagens/lixeira.png" alt="ícone de lixeira">
-                        </button>
-                    </div>
-
-                    <div class="baixo">
-                        <img src="../imagens/retangulo.png" alt="retângulo ciano">
-                        <img src="../imagens/bolobrigas.png" alt="bolo de chocolate" class="bolo">
-                        <div>
-                            <p class="boloTitulo">
-                                Bolo de bolo
-                            </p>
-                            <p class="boloLegenda">
-                                Bolo doce
-                            </p>
-                        </div>
-                        <div class="quantidadeBolo">
-                            <h4>
-                                Quantidade
-                            </h4>
-                            <div class="qtd">
-                                <button class="bot">
-                                    <p>
-                                        -
-                                    </p>
-                                </button>
-                                <input class="qtd" type="text">
-                                <button class="bot">
-                                    <p>
-                                        +
-                                    </p>
-                                </button>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="fino">
-                                Total
-                            </p>
-                            <p class="bold">
-                                R$: 25,00
-                            </p>
-                        </div> 
-                        <button class="lixo">
-                            <img src="../imagens/lixeira.png" alt="ícone de lixeira">
-                        </button>
-                    </div>
-
-                    <div class="baixo">
-                        <img src="../imagens/retangulo.png" alt="retângulo ciano">
-                        <img src="../imagens/bolobrigas.png" alt="bolo de chocolate" class="bolo">
-                        <div>
-                            <p class="boloTitulo">
-                                Bolo de bolo
-                            </p>
-                            <p class="boloLegenda">
-                                Bolo doce
-                            </p>
-                        </div>
-                        <div class="quantidadeBolo">
-                            <h4>
-                                Quantidade
-                            </h4>
-                            <div class="qtd">
-                                <button class="bot">
-                                    <p>
-                                        -
-                                    </p>
-                                </button>
-                                <input class="qtd" type="text">
-                                <button class="bot">
-                                    <p>
-                                        +
-                                    </p>
-                                </button>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="fino">
-                                Total
-                            </p>
-                            <p class="bold">
-                                R$: 25,00
-                            </p>
-                        </div> 
-                        <button class="lixo">
-                            <img src="../imagens/lixeira.png" alt="ícone de lixeira">
-                        </button>
-                    </div>
-
-                    <div class="baixo">
-                        <img src="../imagens/retangulo.png" alt="retângulo ciano">
-                        <img src="../imagens/bolobrigas.png" alt="bolo de chocolate" class="bolo">
-                        <div>
-                            <p class="boloTitulo">
-                                Bolo de bolo
-                            </p>
-                            <p class="boloLegenda">
-                                Bolo doce
-                            </p>
-                        </div>
-                        <div class="quantidadeBolo">
-                            <h4>
-                                Quantidade
-                            </h4>
-                            <div class="qtd">
-                                <button class="bot">
-                                    <p>
-                                        -
-                                    </p>
-                                </button>
-                                <input class="qtd" type="text">
-                                <button class="bot">
-                                    <p>
-                                        +
-                                    </p>
-                                </button>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="fino">
-                                Total
-                            </p>
-                            <p class="bold">
-                                R$: 25,00
-                            </p>
-                        </div> 
-                        <button class="lixo">
-                            <img src="../imagens/lixeira.png" alt="ícone de lixeira">
-                        </button>
-                    </div>
-
-                    <div class="baixo">
-                        <img src="../imagens/retangulo.png" alt="retângulo ciano">
-                        <img src="../imagens/bolobrigas.png" alt="bolo de chocolate" class="bolo">
-                        <div>
-                            <p class="boloTitulo">
-                                Bolo de bolo
-                            </p>
-                            <p class="boloLegenda">
-                                Bolo doce
-                            </p>
-                        </div>
-                        <div class="quantidadeBolo">
-                            <h4>
-                                Quantidade
-                            </h4>
-                            <div class="qtd">
-                                <button class="bot">
-                                    <p>
-                                        -
-                                    </p>
-                                </button>
-                                <input class="qtd" type="text">
-                                <button class="bot">
-                                    <p>
-                                        +
-                                    </p>
-                                </button>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="fino">
-                                Total
-                            </p>
-                            <p class="bold">
-                                R$: 25,00
-                            </p>
-                        </div> 
-                        <button class="lixo">
-                            <img src="../imagens/lixeira.png" alt="ícone de lixeira">
-                        </button>
-                    </div>
+                                    <p class=\"bold\">R$". $valor*$bolo['qtd'] .".00</p>
+                                </div> 
+                                <form class=\"btnRemover\"action=\"remover.php?posicao=".$posicaoArray."\" method=\"post\">
+                                <input type=\"submit\" class=\"remover\" value=\"\">
+                                </form>
+                            </div>";
+                            //<i class=\"material-icons\" style=\"color:white; position: absolute\">delete</i>
+                            }
+                        ?>
                 </div>
                 <div class="dados">
                     <div class="total">
@@ -389,11 +191,11 @@ include "conexao.php";
                                 Subtotal
                             </p>
                             <h2>
-                                R$ 25,00
+                                R$<?php echo(string)$totalCarrinho?>,00
                             </h2>
                         </div>
                     </div>
-                    <a href="../checkout/index.php">
+                    <a href="../checkout/endereco.php">
                         <button class="compra">
                             <p>
                                 Fechar a Compra
@@ -421,8 +223,8 @@ include "conexao.php";
                         </a>
                     </div>
                 </div>
-            </div>
         </div>
+            </div>
     </main>
     <footer>
         <div class="tudinho">

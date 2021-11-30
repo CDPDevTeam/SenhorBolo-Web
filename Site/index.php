@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../class/produto.php';
+require_once 'class/produto.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +15,9 @@ require_once '../class/produto.php';
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="css/home.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../imagens/favicon.png"/>
+    <link rel="icon" type="image/png" href="imagens/favicon.png"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title> Senhor Bolo</title>
 </head>
@@ -26,17 +26,17 @@ require_once '../class/produto.php';
     <header>
         <div id="caixao">
             <div class="conteudoHeader">
-                <a href="../home/index.php"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
+                <a href="#"><img src="imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
                 <?php 
                 if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
                 ?>
-                <a href="../perfil/index.php" class="linkUsuario">
+                <a href="perfil/index.php" class="linkUsuario">
                     <div class="perfilUsuario">
                         <?php echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/usuario/".$_SESSION["photo"]."\" alt=\"Foto de perfil do usuário\" />"); ?>
                         <h4> <?php echo $_SESSION['name']; ?> <br> <span> Ver perfil </span></h4>
                     </div>
                 </a>
-                <a href="../carrinho/index.php" class="linkCarrinho">
+                <a href="carrinho/index.php" class="linkCarrinho">
                     <div class="carrinhoCompras">
                         <span class="material-icons md-30">
                             shopping_cart
@@ -45,7 +45,7 @@ require_once '../class/produto.php';
                 </a>
                 <?php 
                 }else{
-                    echo("<a href=\"../login/index.php\">
+                    echo("<a href=\"login/index.php\">
                         <button style=\"
                         display: flex;
                         justify-content: center;
@@ -63,7 +63,7 @@ require_once '../class/produto.php';
                         </button>
                         </a> 
 
-                        <a href=\"../cadastro/index.php\">
+                        <a href=\"cadastro/index.php\">
                         <button style=\"
                         display: flex;
                         justify-content: center;
@@ -86,16 +86,16 @@ require_once '../class/produto.php';
         </div>
         <div id="caixinha">
             <nav>
-                <a href="../pesquisa/index.php">
+                <a href="pesquisa/index.php">
                     Produtos
                 </a>
-                <a href="../pedidos/index.php">
+                <a href="pedidos/index.php">
                     Meus Pedidos
                 </a>
-                <a href="../cupons/index.php">
+                <a href="cupons/index.php">
                     Cupons
                 </a>
-                <a href="../aboutus/index.php">
+                <a href="pedido/index.php">
                     Sobre nós
                 </a>
             </nav>
@@ -129,7 +129,7 @@ require_once '../class/produto.php';
                 <div class='searchHolder'>
                         <input type="text" id="searchbig" placeholder="Digite para pesquisar" width="522" height="56" />
                         <button id="enterinvisible" onclick="myFunction();">
-                        <img src="../imagens/lupa.png" alt="lupa de pesquisa">
+                        <img src="imagens/lupa.png" alt="lupa de pesquisa">
                         </button>
                     </div>    
                     <script>
@@ -142,13 +142,13 @@ require_once '../class/produto.php';
                         });
 
                         function myFunction() {
-                            window.location.href = "/site/pesquisa/index.php?s=" + document.getElementById('searchbig').value;
+                            window.location.href = "pesquisa/index.php?s=" + document.getElementById('searchbig').value;
                         }
                     </script>
 
             </div>
-            <div class="img">
-                <img class="" src="../imagens/bolo-kit-katCROP.png" alt="bolo de kit kat">
+            <div class="imagem">
+                <img class="imagem" src="../imagens/sinep.png" alt="Anúncio para baixar o aplicativo">
             </div>
         </div>
         <div class="conteudoPrincipal">
@@ -165,7 +165,7 @@ require_once '../class/produto.php';
                         $bolo = $produto->listProduct();
 
                         for($i = 0; $i < sizeof($bolo); $i++){
-                            echo (" <a href=\"/site/produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
+                            echo (" <a href=\"produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
                                     <div class=\"produto\">
                                         <div class=\"fundoIMGProduto\">
                                             <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[$i]["foto_prod"]."\" alt=\"Imagem do produto\" />
@@ -184,7 +184,7 @@ require_once '../class/produto.php';
         </div>
 
         <div class="imagem">
-            <img class="imagem" src="../imagens/sinep.png" alt="Anúncio para baixar o aplicativo">
+            <img class="imagem" src="imagens/anuncio.png" alt="Anúncio para baixar o aplicativo">
         </div>
 
         <div class="recomendados">
@@ -198,7 +198,7 @@ require_once '../class/produto.php';
                         $bolo = $produto->getCakeCategory('Bolo recheado');
 
                         for($i = 0; $i < sizeof($bolo); $i++){
-                            echo (" <a href=\"/site/produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
+                            echo (" <a href=\"produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
                                     <div class=\"produto\">
                                         <div class=\"fundoIMGProduto\">
                                             <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[$i]["foto_prod"]."\" alt=\"Imagem do produto\" />
@@ -227,7 +227,7 @@ require_once '../class/produto.php';
                         $bolo = $produto->getCakeCategory('Bolo Tradicional');
 
                         for($i = 0; $i < sizeof($bolo); $i++){
-                            echo (" <a href=\"/site/produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
+                            echo (" <a href=\"produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
                                     <div class=\"produto\">
                                         <div class=\"fundoIMGProduto\">
                                             <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[$i]["foto_prod"]."\" alt=\"Imagem do produto\" />
@@ -248,8 +248,8 @@ require_once '../class/produto.php';
     <footer>
         <div class="tudinho">
             <div>
-                <a href="../home/index.php">
-                    <img class="logro" src="../imagens/logay.png" alt="logo escrito senhor bolo">
+                <a href="home/index.php">
+                    <img class="logro" src="imagens/logay.png" alt="logo escrito senhor bolo">
                 </a>
                 <p class="dev">
                     Desenvolvido pelo grupo CDP Inc.
@@ -283,8 +283,8 @@ require_once '../class/produto.php';
                     Siga-nos
                 </p>
                 <div>
-                    <img src="../imagens/instagram.png" alt="logo do instagram">
-                    <img src="../imagens/twitter-logo-7.png" alt="logo do twitter"> 
+                    <img src="imagens/instagram.png" alt="logo do instagram">
+                    <img src="imagens/twitter-logo-7.png" alt="logo do twitter"> 
                 </div>
             </div>
             <div class="app">
@@ -292,8 +292,8 @@ require_once '../class/produto.php';
                     Baixe Nossos Aplicativos
                 </p>
                 <div class="zap">
-                    <img class="aba" src="../imagens/DownloadAndroid.png" alt="Faça o Download do aplicativo no Android">
-                    <img class="abb" src="../imagens/appstore.png" alt="Faça o Download do aplicativo na AppStore">
+                    <img class="aba" src="imagens/DownloadAndroid.png" alt="Faça o Download do aplicativo no Android">
+                    <img class="abb" src="imagens/appstore.png" alt="Faça o Download do aplicativo na AppStore">
                 </div>
             </div>
         </div>

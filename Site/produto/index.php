@@ -34,7 +34,7 @@
     <header>
         <div id="caixao">
             <div class="conteudoHeader">
-                <a href="../home/index.php"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
+                <a href="../index.php"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
                 
                 <div class='searchHolder'>
                         <input type="text" id="searchbig" placeholder="Digite para pesquisar" width="522" height="56" />
@@ -151,139 +151,72 @@
     </script>
     <main>
         <div class="englobar">
-            <div class="imagem" style="background-color:white; border-radius: 20px; width:70%; display: flex; align-content: center; height:593px;">
+            <div class="imagemProduto">
                 <?php
-                    
-                    echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[0]['foto_prod']."\" alt=\"Imagem do produto\" class=\"teste\"/>");
+                   echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[0]['foto_prod']."\" alt=\"Imagem do produto\" class=\"teste\"/>");
                 ?>
             </div>
-            <div class="juntatu">
-                <div class="dados">
-                    <?php
-                        echo("<div class=\"nomeBolo\">
-                                <h2>" . $bolo[0]['nome_prod'] . "</h2>" . "<p>" . $bolo[0]['categoria_prod_fk'] . "</p>" . "</div>" . "<h3 id=\"preco\">" . $bolo[0]['preco_catprod'] . "</h3>"
-                            );
-                        ?>
-                    <div class="tamanhosBolo">
-                        <h4>
-                            Tamanho
-                        </h4>
-                        <div class="botaoTamanho">
-                            
-                            <button class="boto">
-                                <p>
-                                    250g
-                                </p>
-                            </button>
-                            <button class="boto">
-                                <p>
-                                    500g
-                                </p>
-                            </button>
-                            <button class="boto">
-                                <p>
-                                    1kg
-                                </p>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="quantidadeBolo">
-                        <h4>
-                            Quantidade
-                        </h4>
-                        <div class="qtd">
-                            <button class="bot" onclick="funcSub()">
-                                <p>
-                                    -
-                                </p>
-                            </button>
-                            <input type="text" value="1" id="qtd" readonly style="text-align: center;">
-                            <button class="bot" onClick="funcAd()">
-                                <p>
-                                    +
-                                </p>
-                            </button>
-                            <script type="text/javascript">
+            <div class="infoProduto">
+                    <div class="rowNomePreco">
+                        <div class="infoDireita">
+                            <h2> <?php echo $bolo[0]['nome_prod'] ?> </h2>
+                            <h3> <?php echo $bolo[0]['categoria_prod_fk'] ?> </h3>
+                            <p> Descrição padrão do produto, olha que bolo <br> bonito esse, não quer comprar?</p>   
+                        </div>    
+                        <div class="infoEsquerda">
+                        <?php 
+                                $teste = explode('$', $bolo[0]['preco_catprod']);
+                                $testeAux = explode('.', $teste[1]);
+                                echo "<h3>R$ <span>".$testeAux[0]."</span></h3>"
+                            ?>
+                        </div>   
+                    </div>    
+                    <script type="text/javascript">e
                                 function funcSub()
                                 {
                                     var qtde;
-                                    var preco = parseFloat(document.getElementById("preco").textContent.substr(1));
                                     qtde = parseInt(document.getElementById("qtd").value);
                                     if(qtde > 1){
                                         qtde = qtde - 1;
                                         document.getElementById("qtd").value = qtde;
-                                        preco = preco-(preco/(qtde+1));
-                                        if(preco == parseInt(preco)){
-                                            document.getElementById("preco").innerHTML = "$"+preco+".00"; 
-                                        } else {
-                                            document.getElementById("preco").innerHTML = "$"+preco; 
-                                        }
+                                        document.getElementById("qtde").value = qtde;
                                     }
-
-
                                 }
-                                function funcAd()
+                                function funcAdd()
                                 {
                                     var qtde;
-                                    var preco = parseFloat(document.getElementById("preco").textContent.substr(1));
                                     qtde = parseInt(document.getElementById("qtd").value);
                                     qtde = qtde + 1;
                                     document.getElementById("qtd").value = qtde;
-                                    preco = (preco/(qtde-1))+preco;
-                                    if(preco == parseInt(preco)){
-                                        document.getElementById("preco").innerHTML = "$"+preco+".00"; 
-                                    } else {
-                                        document.getElementById("preco").innerHTML = "$"+preco; 
-                                    }
+                                    document.getElementById("qtde").value = qtde;
                                 }
-                            </script>
-                        </div>
-                    </div>
-                    
-                    <div class="teste">
-                        <button class="ad">
-                            <a href="../carrinho/index.php" style=" text-decoration: none; color: #fff;">
-                            <p>
-                                Adicionar ao carrinho
-                            </p>
-                            </a>
-                        </button>
-                    </div>
-                </div>
-                <div class="imgs">
-                    <button>
-                        <?php
-                            echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[0]['foto_prod']."\" alt=\"Imagem do produto\" class=\"teste\"/>");
-                        ?>
-                    </button>
-                    <button>
-                        <?php
-                            echo("<img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo[0]['foto_prod']."\" alt=\"Imagem do produto\" class=\"teste\"/>");
-                        ?>
-                    </button>
-                </div>
-            </div>
+                    </script>
+                    <div class="rowQtdeBotao">
+                        <div class="widgetQtde">
+                            <button class="bot" onClick="funcSub();">
+                                -
+                            </button>    
+                            <input type="text" name="qtd" value="1" id="qtd" readonly>
+                            <button class="bot" onClick="funcAdd();">
+                                +
+                            </button>  
+                        </div>    
+                        <form action="adicionar.php?id=<?php echo($_GET['id']);?>" method="post">
+                                <input type="hidden" name="qtd" value="1" id="qtde">
+                                <input type="submit" name="adicionar" class="btnAddCarrinho" value="Adicionar ao carrinho">
+                         </form>
+                    </div>    
+            </div>    
         </div>
-        <div class="descricao">
-            <p>
-                Massa amanteigada de baunilha com recheio de buttercream
-                de leite saborizado com raspas de limão, cobertura de
-                ganache de chocolate meio amargo, drip de brigadeiro
-                branco e topo com morangos e brigadeiro gourmet tradicional.
-            </p>
-        </div>
-        <<div class="recomendados">
+        <div class="recomendados">
             <h2>
                 Bolos recomendados
             </h2>
         
             <div class="produtos">
-
                 <?php
                         $teste = new Produto();
-
                         $bolo = $teste->listProduct();
-
                         for($i = 0; $i < sizeof($bolo); $i++){
                             echo (" <a href=\"/site/produto/index.php?id=".$bolo[$i]["id_prod"]."\"> 
                                     <div class=\"produto\">
@@ -299,7 +232,6 @@
                                 </a>");
                         }
                 ?>
-               
             </div>
         </div>
 

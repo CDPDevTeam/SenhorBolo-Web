@@ -35,7 +35,7 @@ session_start();
         <header>
             <div id="caixao">
                 <div class="conteudoHeader">
-                    <a href="../home/index.php"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
+                <a href="../index.php"><img src="../imagens/logay.png" alt="logo escrito senhor bolo" width="258" height="50"></a>
                     
                     <div class='searchHolder'>
                         <input type="text" id="searchbig" placeholder="Digite para pesquisar" width="522" height="56" />

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "conexao.php";
+require_once '../class/perfil.php';
 ?>
 
 <!DOCTYPE html>
@@ -123,8 +123,37 @@ include "conexao.php";
                     <img src="../imagens/cupom.png" class="lista" alt="ícone de cupom">
                     <h5 class="oi"> Cupons disponíveis </h5>
                 </div>
-                <div class="cupomContainer">
-                    <div class="cupom">
+                <div class="cupomContainer" style="height:550px;">
+                    <?php 
+                        if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
+                    ?>
+
+                    <?php 
+                        $user = new Perfil();
+                        $cupom = $user->getCoupon($_SESSION['id']);
+                            
+                        for($i = 0; $i < sizeof($cupom); $i++){
+                            echo ("<div class=\"cupom\">
+                                    <div class=\"texto\">
+                                        <h3>" . $cupom[$i]['valor_desc'] . "% OFF no valor final</h3>
+                                        <p>Ver regulamento</p>
+                                    </div>
+                                    <a href=\"../carrinho/index.php\">
+                                    <button>
+                                        <p>Usar cupom</p>
+                                    </button>
+                                    </a>
+                                </div>");
+                        }
+                    ?>
+
+                    <?php 
+                        }else
+                        {
+                            echo"<script language='javascript' type='text/javascript'>alert('Faça o login para ver seus cupons!');window.location.href='../login/index.php'</script>";
+                        }
+                    ?>
+                    <!--<div class="cupom">
                         <div class="texto">
                             <h3>10% OFF em todo o site</h3>
                             <p>Ver regulamento</p>
@@ -194,7 +223,7 @@ include "conexao.php";
                             <p>Usar cupom</p>
                         </button>
                         </a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </main>

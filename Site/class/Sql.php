@@ -6,7 +6,7 @@ class Sql extends PDO {
 
     public function __construct() {
 
-        $this->conn = new PDO("pgsql:host=motty.db.elephantsql.com;port=5432;dbname=vmnrcpwz", "vmnrcpwz", "uN9-oJ2RFBzZF9sEFeHEdQcMNb0EJA2L");
+        $this->conn = new PDO("pgsql:host=ec2-34-203-114-67.compute-1.amazonaws.com;port=5432;dbname=d20gs8fi9etl55", "ywqpycucbiguqa", "c0e978116cdbbb710871d3605b9591e25d69bcd53eec83591eb359b81c99e177");
 
     }
 
@@ -26,7 +26,7 @@ class Sql extends PDO {
 
     }
 
-    public function query($rawQuery, $params = array()) {
+    public function queryTeste($rawQuery, $params = array()) {
 
         $stmt = $this->conn->prepare($rawQuery);
 
@@ -41,7 +41,7 @@ class Sql extends PDO {
     public function select($rawQuery, $params = array())
     {
 
-        $stmt = $this->query($rawQuery, $params);
+        $stmt = $this->queryTeste($rawQuery, $params);
         $this->conn=null;
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
 

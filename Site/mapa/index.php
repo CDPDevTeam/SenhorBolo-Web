@@ -1,6 +1,17 @@
 <?php
 session_start();
-include "conexao.php";
+require_once '../class/perfil.php';
+
+$totalCarrinho = 0;
+
+foreach($_SESSION['carrinho'] as $bolo){
+    $teste = explode('$', $bolo['preco']);
+    $testeAux = explode('.', $teste[1]);
+
+    $valor = (int)$testeAux[0];
+    $totalCarrinho += $valor * $bolo['qtd'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -152,6 +163,25 @@ include "conexao.php";
                     </div>
                     <div class="destino">
                         <img src="../imagens/ic_home_24px.png" alt="Ícone de Casa">
+                        <?php
+                            
+                            $user = new Perfil();
+                            $endereco = $user->getAdressTres($_SESSION['id']);
+                            
+                            for($i = 0; $i < sizeof($endereco); $i++){
+
+                            echo( "<div class=\"txt\">
+                                <p class=\"ar\">" .
+                                    $endereco[$i]["rua"] . ", " . $endereco[$i]["numero"] .
+                                "</p>
+                                <p class=\"br\">" .
+                                    $endereco[$i]["cep"] .
+                                "</p>
+                            </div>"
+                            );
+                        }
+                        ?>
+                        <!--
                         <div class="txt">
                             <p class="ar">
                                 R. Humaitá, 638
@@ -159,12 +189,34 @@ include "conexao.php";
                             <p class="br">
                                 02013-001
                             </p>
-                        </div>
+                        </div>-->
                     </div>
                     <p class="b">
                        Seu pedido: 
                     </p> 
-                    <div class="pedido">
+                    <?php 
+
+                            foreach($_SESSION['carrinho'] as $posicaoArray  => $bolo){
+                                echo "<div class=\"pedido\">
+                                <img src=\"https://thespacefox.github.io/SenhorBolo-Imagens/images/bolos/".$bolo['imagem']."\" alt=\"bolo de chocolate\" class=\"bolo\">
+                                <div class=\"txt\">
+                                    <p>
+                                    ".$bolo['nome']. ", " .$bolo['qtd']. " Unidades 
+                                    </p>
+                                    <div class=\"chega\">
+                                        <img class=\"caminhao\" src=\"../imagens/caminhao.png\" alt=\"Ícone de Caminhão\">
+                                        <p>
+                                            A caminho
+                                        </p>
+                                    </div>
+                                    <p>
+                                        R$". $valor*$bolo['qtd'] .".00
+                                    </p>
+                                </div>
+                            </div>";
+                            }
+                    ?>
+                    <!-- <div class="pedido">
                         <img class="bolo" src="../imagens/66opkkln.png" alt="Bolo do Haro">
                         <div class="txt">
                             <p>
@@ -180,7 +232,7 @@ include "conexao.php";
                                 R$: 20,00
                             </p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </main>

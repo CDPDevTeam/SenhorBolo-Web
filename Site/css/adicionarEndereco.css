@@ -299,20 +299,9 @@ div.tudinho div.app img.abb {
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 36.458vw;
-}
-
-.login {
+  margin: 0 auto;
+  width: 60%;
+  max-width: 1110px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,61 +312,10 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 20px;
-  width: 517px;
-  height: 604px;
-  background-color: #0BBAB3;
-  color: white;
 }
 
-.login h3, .login h4 {
-  font-weight: bold;
-}
-
-.login h3 {
-  margin-bottom: 30px;
-}
-
-.login h4 {
-  margin-top: 6px;
-  margin-bottom: 4px;
-}
-
-.login a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-}
-
-.login #resetSenha {
-  margin-top: 6px;
-}
-
-.login .naocadastro {
-  margin-top: 35px;
-}
-
-.login img {
-  margin-bottom: 45px;
-}
-
-.login input {
-  width: 347px;
-  height: 43px;
-  padding-left: 15px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  color: #b8b8b8;
-  font-family: "Raleway", sans-serif;
-  background-color: #fff;
-  font-size: 20px;
-}
-
-.login form {
+.selectAddressTitle, .addAddressTitle {
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -388,36 +326,216 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.selectAddressTitle h2, .addAddressTitle h2 {
+  color: #434343;
+  margin: 0;
+  margin-left: 10px;
+  font-size: 30;
+  font-weight: bold;
+}
+
+.addressList {
+  margin-bottom: 20px;
   width: 100%;
   height: auto;
-  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.login form button {
-  border: none;
-  width: 25px;
-  height: 25px;
+.address {
+  margin-left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 26px;
+  width: 251px;
+  height: 170px;
   background-color: white;
-  padding: 0;
-  margin: 20px 30px 12px -40px;
-}
-
-.login .loginbotao {
-  margin-top: 50px;
-  width: 332px;
-  height: 51px;
-  background-color: #4E2F00;
-  border: none;
-  font-family: "Raleway", sans-serif;
-  color: #fff;
   border-radius: 10px;
 }
 
-.login .loginbotao h3 {
-  margin: 11px 0 11px 0;
+.address h3, .address h4 {
+  margin: 0;
+  margin-bottom: 8px;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  color: #707070;
 }
 
-.texto {
-  width: auto;
-  height: 190px;
+.address h3 {
+  font-weight: bold;
 }
+
+.address h4 {
+  font-weight: 500;
+}
+
+.btnSelecionar {
+  margin-top: 10px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 153px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0BBAB3;
+  font-family: 'Raleway', sans-serif;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.addAddress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px;
+  width: 870px;
+  height: 240px;
+  border-radius: 10px;
+  background-color: #FFF;
+}
+
+.addAddress form {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.addAddress form label {
+  margin-bottom: 5px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #707070;
+}
+
+.addAddress form input[type=text] {
+  padding-left: 20px;
+  border-radius: 10px;
+  height: 43px;
+  background-color: #F5F5F5;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+}
+
+.addAddress form input[type=text]:focus {
+  outline: none;
+}
+
+.firstLine, .secondLine {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todaywewill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#rua {
+  width: 409px;
+}
+
+#numero {
+  margin-left: 14px;
+  width: 100px;
+}
+
+.numero {
+  margin-left: 14px;
+}
+
+#bairro {
+  width: 241px;
+}
+
+#CEP {
+  margin-right: 14px;
+  width: 200px;
+}
+
+#complemento {
+  width: 303px;
+}
+
+#observacao {
+  width: 241px;
+}
+
+.btnAdicionar {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 312px;
+  height: 42px;
+  border: none;
+  border-radius: 10px;
+  background-color: #0BBAB3;
+  font-family: 'Raleway', sans-serif;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.prosseguirPagamento {
+  margin-top: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 458px;
+  height: 62px;
+  border: none;
+  border-radius: 10px;
+  background-color: #099B95;
+  font-family: 'Raleway', sans-serif;
+  color: #FFF;
+  font-size: 29px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=adicionarEndereco.css.map */

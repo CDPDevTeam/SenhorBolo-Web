@@ -298,6 +298,12 @@ div.tudinho div.app img.abb {
   height: 52px;
 }
 
+.imagemProduto {
+  width: 531px;
+  height: 521px;
+  background-color: #64CBC7;
+}
+
 div.englobar {
   margin: 0 auto;
   width: 1170px;
@@ -535,3 +541,4 @@ div.produto img.teste {
 div.titulo {
   margin-left: 200px;
 }
+/*# sourceMappingURL=produto.css.map */

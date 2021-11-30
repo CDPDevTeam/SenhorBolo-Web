@@ -27,10 +27,13 @@ class Produto
 	public function listProduct()
 	{
 		$sql = new Sql();
+		$parametros = array(
+			":bolo" => "Bolo personalizado"
+		);
 		$list = $sql->select('SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
                         produto.categoria_prod_fk, categoria_produto.preco_catprod 
                         FROM produto, categoria_produto
-                        WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod ORDER BY random()');
+                        WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod AND produto.categoria_prod_fk != :bolo ORDER BY random()', $parametros);
 		
 		return $list;
         
@@ -63,5 +66,19 @@ class Produto
         WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod AND produto.nome_prod ILIKE :s ORDER BY produto.nome_prod', $parametros);
         return $product;
     }
+
+
+    public function listCart($id)
+	{
+		$sql = new Sql();
+		$parametros = array(
+			":id" => $id
+		);
+        $product = $sql->select('SELECT produto.id_prod,  produto.nome_prod, LOWER(produto.foto_prod) AS foto_prod,
+        produto.categoria_prod_fk, categoria_produto.preco_catprod 
+        FROM produto, categoria_produto
+        WHERE produto.categoria_prod_fk = categoria_produto.nome_catprod AND produto.id_prod = :id', $parametros);
+        return $product;
+	}
 }	
 ?>

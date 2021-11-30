@@ -369,9 +369,11 @@ div.cupom {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #fff;
+  background-color: #e6e6e6;
   border-radius: 20px;
   color: #818181;
+  -webkit-box-shadow: 6px 11px 18px #888888;
+          box-shadow: 6px 11px 18px #888888;
 }
 
 div.cupom div.texto h3 {

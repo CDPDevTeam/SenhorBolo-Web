@@ -338,12 +338,12 @@ div.lista
   display: flex;
   flex-direction: column;
   width: auto;
-  justify-content: space-between;
 }
 
 div.baixo
 {
   display: flex;
+  align-items: center;
   background-color: white;
   border-radius: 16px;
   flex-direction: row;
@@ -354,12 +354,31 @@ div.baixo
   margin-bottom:20px;
 }
 
+.fundoCiano{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 138px;
+  height: 118px;
+  border-radius: 20px;
+  background-color: #64CBC7;
+}
+
+.bolo{
+  width: 107px;
+  height: 105px;
+}
+
+
+
 p.boloTitulo
 {
   margin-bottom:0px;
-  margin-top:30px;
-  font-size:27px;
+  font-size:24px;
   font-weight: bold;
+  width: 306px;
+  max-width: 306px;
+  text-overflow: ellipsis;
 }
 
 p.boloLegenda
@@ -369,7 +388,6 @@ p.boloLegenda
 
 p.fino
 {
-  margin-top: 35px;
   margin-bottom:0px;
   font-size: 20px;
 }
@@ -381,40 +399,39 @@ p.bold
   font-size: 20px;
 }
 
-img.bolo
-{
-  margin-left:-182px;
-  margin-right: 0px;
-}
 
 .qtd{
-  width: 180px;
+  width: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 
 }
 
-h4
+.quantidadeBolo{
+  text-align: left;
+}
+
+.quantidadeBolo h4
 {
+  margin-top: 0;
   margin-bottom: 10px;
-  margin-left:30px;
 }
+
+
 
 input.qtd
 {
-  width: 50px;
+  width: 40px;
   height: 27px;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding-right: 15px;
-  padding-left: 15px;
+  text-align: center;
   border-radius: 10px;
-  border-style: none;
+  border: 2px solid #E6E6E6;
   outline: none;
   color: black;
   font-family: 'Raleway', sans-serif;
-  background-color: #e6e6e6;
+  background-color: none;
   font-size: 20px;
 }
 
@@ -433,17 +450,20 @@ button.bot
   border-radius: 8px;
   border-style: none;
   font-family: 'Raleway', sans-serif;
-  font-size: 45px;
+  font-size: 40px;
  }
 
- button.lixo
- {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top:40px;
-  margin-right:30px;
+ .btnRemover{
+   width:80px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center
+ }
 
+
+ .remover
+ {
   width:40px;
   height:40px;
 

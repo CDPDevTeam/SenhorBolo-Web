@@ -1,0 +1,183 @@
+@import 'template';
+
+main{
+    margin: 0 auto;
+    width: 60%;
+    max-width: 1110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.selectAddressTitle, .addAddressTitle{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    h2{
+        color: #434343;
+        margin: 0;
+        margin-left: 10px;
+        font-size: 30;
+        font-weight: bold;
+    }
+}
+
+.addressList{
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.address{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 26px;
+    width: 251px;
+    height: 170px;
+    background-color: white;
+    border-radius: 10px;
+
+    h3, h4{
+        margin: 0;
+        margin-bottom: 8px;
+        text-align: left;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 17px;
+        color: #707070;
+    }
+
+    h3{
+        font-weight: bold;
+    }
+
+    h4{
+        font-weight: 500;
+    }
+}
+
+.btnSelecionar{
+    margin-top: 10px;
+    align-self: center;
+    width: 153px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0BBAB3;
+    font-family: 'Raleway', sans-serif;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.addAddress{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 870px;
+    height: 240px;
+    border-radius: 10px;
+    background-color: #FFF;
+
+    form{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        label{
+            margin-bottom: 5px;
+            font-size: 17px;
+            font-weight: bold;
+            color: #707070;
+        }
+        input[type=text]{
+            padding-left: 20px;
+            border-radius: 10px;
+            height: 43px;
+            background-color: #F5F5F5;
+            border: none;
+            font-family:'Raleway', sans-serif;   
+            font-size: 18px;
+        }
+        input[type=text]:focus{
+            outline: none;
+        }
+    }
+}
+
+.firstLine, .secondLine{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.todaywewill{
+    display: flex;
+    flex-direction: row;
+}
+
+#rua{
+    width: 409px;
+}
+
+#numero{
+    margin-left: 14px;
+    width: 100px;
+}
+
+.numero{
+    margin-left: 14px;
+}
+
+#bairro{
+    width: 241px;
+}
+
+#CEP{
+    margin-right: 14px;
+    width: 200px;
+}
+
+#complemento{
+    width: 303px;
+}
+
+#observacao{
+    width: 241px;
+}
+
+.btnAdicionar{
+    align-self: center;
+    width: 312px;
+    height: 42px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0BBAB3;
+    font-family: 'Raleway', sans-serif;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a{
+    align-self: center;
+}
+
+.prosseguirPagamento{
+    margin-top: 30px;
+    align-self: center;
+    width: 458px;
+    height: 62px;
+    border: none;
+    border-radius: 10px;
+    background-color: #099B95;
+    font-family: 'Raleway', sans-serif;
+    color: #FFF;
+    font-size: 29px;
+    font-weight: bold;
+}

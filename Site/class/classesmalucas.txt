@@ -1,3 +1,0 @@
-conexao: usar PDO
-autenticacao: login e cadastro (colocar os ngc em private public fazer metodo e tal)
-produto: pegar os produto e dar display, pesquisar produto e mostrar produto pelo ID

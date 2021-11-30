@@ -230,10 +230,28 @@ require_once '../class/perfil.php';
                     </div>
                     <div class="deletar">
                         <h2> Desconectar de minha conta </h2>
-                        <button type="button"> 
-                            <span class="material-icons md-35"> delete_forever </span>
-                            Desconectar
-                        </button>
+                        <form action="sair.php" method="post">
+                            <input type="submit" name="desconectar" class="oioi" value="Desconectar" style="display: -webkit-box;
+                              display: -ms-flexbox;
+                              display: flex;
+                              -webkit-box-align: center;
+                                  -ms-flex-align: center;
+                                      align-items: center;
+                              -webkit-box-pack: space-evenly;
+                                  -ms-flex-pack: space-evenly;
+                                      justify-content: space-evenly;
+                              margin-left: 18px;
+                              line-height: 0px;
+                              width: 251px;
+                              height: 78px;
+                              border: 0;
+                              border-radius: 25px;
+                              font-size: 28px;
+                              font-family: 'Raleway';
+                              font-weight: bold;
+                              color: #FFF;
+                              background-color: #D90042;">
+                        </form>
                     </div>
                 
             </div>

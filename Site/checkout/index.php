@@ -1,6 +1,19 @@
 <?php
 session_start();
-include "conexao.php";
+require_once '../class/perfil.php';
+
+$totalCarrinho = 0;
+
+foreach($_SESSION['carrinho'] as $bolo){
+    $teste = explode('$', $bolo['preco']);
+    $testeAux = explode('.', $teste[1]);
+
+    $valor = (int)$testeAux[0];
+    $totalCarrinho += $valor * $bolo['qtd'];
+}
+
+$totalFrete = $totalCarrinho + 10;
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +30,12 @@ include "conexao.php";
     <link rel="icon" type="image/png" href="../imagens/favicon.png"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title> Checkout </title>
+    <script type="text/javascript">
+		function mirrorInput(source, dest) {
+			var destination = document.getElementById(dest);
+			destination.innerHTML = source.value;
+		}
+	</script>
 </head>
 <body>
     <header>
@@ -130,7 +149,32 @@ include "conexao.php";
                     <p>
                 </div>
                 <div class="dados">
-                    <p>
+                    <?php
+                        
+                        $user = new Perfil();
+                        $endereco = $user->getAdressDois($_SESSION['id']);
+                        
+                        for($i = 0; $i < sizeof($endereco); $i++){
+                            echo(" 
+                                 <p>" .
+                                     $endereco[$i]["rua"] . ", " . $endereco[$i]["numero"] .
+                                 "</p>
+                    
+                                 <p>" .
+                                     $endereco[$i]["complemento"] .
+                                 "</p>
+                    
+                                 <p>" .
+                                     $endereco[$i]["bairro"] .
+                                 "</p>
+                    
+                                 <p>" .
+                                     $endereco[$i]["cep"] . 
+                                "</p>
+                            ");
+                        }
+                            ?>
+                    <!-- <p>
                         Vale do Cariri, 276
                     </p>
                     
@@ -144,7 +188,7 @@ include "conexao.php";
                     
                     <p>
                         02013-001
-                    </p>
+                    </p>-->
                     
                     <a href="../rastreio/index.php">
                         <button>
@@ -164,19 +208,24 @@ include "conexao.php";
                 </div>
                 <div class="dados">
                     <p>
-                        3 item(s) adicionado(s)
+                        <?php 
+                        
+                        $CartCount = count($_SESSION['carrinho']);
+                        print ($CartCount);
+
+                        ?> item(s) adicionado(s)
                     </p>
                     
                     <p>
-                    Subtotal: R$25,00
+                    Subtotal:  R$<?php echo(string)$totalCarrinho?>,00
                     </p>
                     
                     <p>
-                        Frete: R$7,00
+                        Frete: R$10,00
                     </p>
                     
                     <p>
-                        Total: R$32,00
+                        Total:  R$<?php echo(string)$totalFrete?>,00
                     </p>
                     
                     <a href="../carrinho/index.php">
@@ -200,11 +249,13 @@ include "conexao.php";
 
                             <div class="cartaoFrente">
                                 <div class="bandeiraCartao"></div>
-                                <div class="numeroCartao"> 1256 9856 1049 1568 </div>
-                                <div class="nomeCartao"> Marcia Xavier Cury </div>
+                                <div class="numeroCartao">
+                                    <span id="cartaoclonado"></span>
+                                </div>
+                                <div class="nomeCartao"> <span id="nomebandido"></span> </div>
                                 <div class="validadeCartao">
                                     <h6> Válido <br> até </h6>
-                                    <h5> 00/00 </h5>
+                                    <h5> <span id="validade"></span> </h5>
                                 </div>
                             </div>
 
@@ -215,34 +266,41 @@ include "conexao.php";
                                     <div>
                                         <h6> Assinatura Autorizada </h6>
                                         <div class="faixaBranca">
-                                            <h5> 000 </h5>
+                                            <h5> <span id="comandovermelho"></span> </h5>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="informacoesCartao">
                         <div>
                             <h4> Número do cartão </h4>
-                            <input type="text" class="grande">
+                            <form method="post">
+                                <input type="text" onKeyUp="mirrorInput(this, 'cartaoclonado')" class="grande">
+                            </form>
                         </div>
 
                         <div>
                             <h4> Nome do titular </h4>
-                            <input type="text" class="grande">
+                            <form method="post">
+                                <input type="text" onKeyUp="mirrorInput(this, 'nomebandido')" class="grande">
+                            </form>
                         </div>
 
                         <div class="informacoesCurtas">
                             <div>
                                 <h4> Data de validade </h4>
-                                <input type="text">
+                                <form method="post">
+                                    <input type="text" onKeyUp="mirrorInput(this, 'validade')" class="grande">
+                                </form>
                             </div>
 
                             <div>
                                 <h4> CVV </h4>
-                                <input type="text">
+                                <form method="post">
+                                    <input type="text" onKeyUp="mirrorInput(this, 'comandovermelho')" class="grande">
+                                </form>
                             </div>
                         </div>
                     </div>

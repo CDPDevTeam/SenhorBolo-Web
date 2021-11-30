@@ -298,27 +298,23 @@ div.tudinho div.app img.abb {
   height: 52px;
 }
 
-
-
-div.englobar {
-  margin: 0 auto;
-  width: 1170px;
-  height: 570px;
-  margin-top: 30px;
+.imagemProduto {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 531px;
+  height: 521px;
+  background-color: #64CBC7;
+  border-radius: 25px;
 }
 
-div.englobar div.juntatu {
-  margin-left: 30px;
-}
-
-div.englobar div.juntatu div.dados {
+.infoProduto {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,64 +322,18 @@ div.englobar div.juntatu div.dados {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  background-color: white;
-  padding-left: 40px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 500px;
-  height:450px;
-  border-radius: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 651px;
+  max-height: 300px;
+  background-color: #FFF;
+  border-radius: 25px;
+  padding-left: 33px;
+  padding: 45px 0 45px 35px;
 }
 
-div.englobar div.juntatu div.dados h4 {
-  margin-bottom: 5px;
-}
-
-div.englobar div.juntatu div.dados h4:nth-child(1n) {
-  margin-top: 0;
-}
-
-div.englobar div.juntatu div.dados h3 {
-  color:black; 
-  font-size:35px;
-  margin: 0;
-}
-
-div.englobar div.juntatu div.dados h2 {
-  margin: 0;
-  font-weight: bold;
-}
-
-div.englobar div.juntatu div.dados div.tamanhosBolo p {
-  font-size:17px;  
-  margin-bottom:0px;
-   margin-top:0px;
-}
-
-div.englobar div.juntatu div.dados div.nomeBolo  p {
-  font-size:24px; 
-  font-weight:bold; 
-  margin-top:15px; 
-  margin-bottom:0px;
-}
-
-div.englobar div.juntatu div.dados button.boto {
-  width: 70px;
-  height: 40px;
-  margin-right: 10px;
-  background-color: #E6E6E6;
-  color: #575757;
-  border-radius: 13px;
-  border-style: none;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-div.englobar div.juntatu div.dados .qtd {
-  width: 180px;
+.rowNomePreco {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -396,49 +346,27 @@ div.englobar div.juntatu div.dados .qtd {
           justify-content: space-between;
 }
 
-div.englobar div.juntatu div.dados .qtd input {
-  width: 30px;
-  height: 40px;
-  padding-right: 15px;
-  padding-left: 15px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  color: black;
-  font-family: "Raleway", sans-serif;
-  background-color: #F5F5F5;
-  font-size: 20px;
-}
-
-div.englobar div.juntatu div.dados button.bot {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 52px;
-  height: 35px;
-  background-color: #E6E6E6;
-  color: black;
-  border-radius: 8px;
-  border-style: none;
-  font-family: "Raleway", sans-serif;
+.infoDireita h2 {
+  max-width: 540px;
+  text-overflow: ellipsis;
+  margin: 0;
   font-size: 45px;
+  font-weight: bold;
 }
 
-div.englobar div.juntatu div.dados button.bot p {
-  margin: 0;
+.infoDireita h3 {
+  margin-top: 0;
+  color: #666666;
+  font-size: 30;
+  font-weight: 400;
 }
 
-div.englobar div.juntatu div.dados div.teste {
-  margin: 0 auto;
+.infoDireita p {
+  color: #666666;
+  font-size: 20px;
 }
 
-div.englobar div.juntatu div.dados button.ad {
+.infoEsquerda {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -448,51 +376,117 @@ div.englobar div.juntatu div.dados button.ad {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 270px;
-  height: 51px;
-  background-color: #0BBAB3;
+  width: 128px;
+  height: 95px;
+  background-color: #00A59F;
+  border-radius: 24px 0px 0px 24px;
+  justify-content: center;
+}
+
+.infoEsquerda h3 {
+  font-family: 'Montserrat';
+  text-align: center;
+  color: white;
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.infoEsquerda h3 span {
+  font-size: 50px;
+}
+
+.rowQtdeBotao {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.widgetQtde {
+  width: 179px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.widgetQtde input {
+  width: 30px;
   border: none;
-  font-family: "Raleway", sans-serif;
+  font-size: 29px;
   font-weight: bold;
-  font-size: 20px;
-  color: #fff;
-  border-radius: 13px;
 }
 
-div.englobar div.juntatu div.dados button.ad p {
-  margin: 0;
-}
-
-div.englobar div.juntatu div.imgs button {
+.widgetQtde button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0px;
   border: none;
-  background-color: white;
-  border-radius: 15px;
-  margin-top: 20px;
-  margin-right: 15px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 50px;
+  text-align: center;
 }
 
-div.englobar div.juntatu div.imgs img.teste {
-  width: 100px;
-  height: auto;
+.btnAddCarrinho {
+  margin-right: 20px;
+  width: 292px;
+  height: 50px;
+  border: none;
+  background-color: #0BBAB3;
+  border-radius: 8px;
+  font-size: 20px;
+  color: #FFF;
+  font-weight: bold;
 }
 
-div.descricao {
+div.englobar {
   margin: 0 auto;
-  width: 1140px;
-  height: 35px;
-  background-color: white;
-  border-radius: 20px;
-  padding: 15px;
-  margin-top: 50px;
-}
-
-div.descricao p {
-  margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 65%;
+  height: 570px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
 }
 
 .recomendados {
   margin: 0 auto;
   width: 1150px;
+}
+
+.recomendados h2 {
+  margin-top: 0;
 }
 
 div.produtos {
@@ -579,5 +573,4 @@ div.produtos a {
 .textoProduto h5 {
   font-size: 12px;
 }
-
 /*# sourceMappingURL=produto.css.map */
