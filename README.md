@@ -9,8 +9,8 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Fazer as telas do site em HTML/CSS
-- [ ] Conversão das telas para PHP
-- [ ] Conexão com o Banco de Dados
-- [ ] POO
+- [X] Conversão das telas para PHP
+- [X] Conexão com o Banco de Dados
+- [X] POO
 - [ ] Testes de qualidade
 - [ ] Lançamento
